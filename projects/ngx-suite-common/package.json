@@ -1,0 +1,31 @@
+{
+  "name": "@ngx-suite/common",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/cdk": "^20.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/material": "^20.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    "./styles/*": {
+      "sass": "./styles/*"
+    }
+  },
+  "scripts": {
+    "next-preminor-version": "npm version preminor --preid=SNAPSHOT",
+    "next-snapshot-version": "npm version prerelease --preid=SNAPSHOT",
+    "next-major-version": "npm version major",
+    "next-minor-version": "npm version minor",
+    "next-patch-version": "npm version patch",
+    "version": "echo $npm_package_version",
+    "publish": "npm publish --access public"
+  },
+  "sideEffects": false
+}

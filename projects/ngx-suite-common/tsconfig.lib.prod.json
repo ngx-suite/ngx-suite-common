@@ -1,0 +1,22 @@
+{
+    "extends": "./tsconfig.lib.json",
+    "compilerOptions": {
+        "declarationMap": false,
+        "target": "ES2022",
+        "incremental": true,
+        "sourceMap": false
+    },
+    "angularCompilerOptions": {
+        "compilationMode": "partial",
+        "optimization": false,
+        "outputHashing": "none",
+        "sourceMap": true,
+        "namedChunks": false,
+        "aot": true,
+        "extractLicenses": false,
+        "statsJson": false,
+        "progress": true,
+        "vendorChunk": true,
+        "buildOptimizer": false
+    }
+}

@@ -1,0 +1,9 @@
+:root {
+    --ns-font-family--body: 'Roboto', sans-serif;
+    --ns-font-family--title: 'Roboto', sans-serif;
+    --ns-font-family--code: 'Source Code Pro';
+}
+
+$font-family--body: var(--ns-font-family--body) !default;
+$font-family--title: var(--ns-font-family--title) !default;
+$font-family--code: var(--ns-font-family--code) !default;
