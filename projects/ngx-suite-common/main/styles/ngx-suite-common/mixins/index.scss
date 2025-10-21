@@ -1,2 +1,2 @@
-@import 'borders';
-@import 'e2e-container';
+@forward './borders';
+@forward './e2e-container';
