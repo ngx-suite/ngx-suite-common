@@ -2,8 +2,29 @@
     --ns-font-family--body: 'Roboto', sans-serif;
     --ns-font-family--title: 'Roboto', sans-serif;
     --ns-font-family--code: 'Source Code Pro';
-}
 
-$ns-font-family--body: var(--ns-font-family--body) !default;
-$ns-font-family--title: var(--ns-font-family--title) !default;
-$ns-font-family--code: var(--ns-font-family--code) !default;
+    --ns-font-size--display-lg: 57px;
+    --ns-font-size--display: 45px;
+    --ns-font-size--display-sm: 36px;
+
+    --ns-font-size--headline-lg: 32px;
+    --ns-font-size--headline: 28px;
+    --ns-font-size--headline-sm: 24px;
+
+    --ns-font-size--title-lg: 22px;
+    --ns-font-size--title: 16px;
+    --ns-font-size--title-sm: 14px;
+
+    --ns-font-size--body-lg: 16px;
+    --ns-font-size--body: 14px;
+    --ns-font-size--body-sm: 12px;
+
+    --ns-font-size--label-lg: 14px;
+    --ns-font-size--label: 12px;
+    --ns-font-size--label-sm: 11px;
+
+    --ns-font-size--overline: 10px;
+
+    --ns-font-size-icon: 24px;
+    --ns-font-size-icon--small: 16px;
+}

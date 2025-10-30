@@ -1,0 +1,17 @@
+@use '../mixins';
+
+ns-icon {
+    @include mixins.ns-mat-icon-size();
+    display: inline-block;
+    vertical-align: top;
+
+    mat-icon.mat-icon {
+        @include mixins.ns-mat-icon-size();
+        color: inherit;
+    }
+}
+
+
+.ns-font-icon-small {
+    @include mixins.ns-icon-self-size(var(--ns-font-size-icon--small));
+}

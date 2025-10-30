@@ -1,0 +1,67 @@
+@use 'mixins';
+
+.ns-font-display-lg {
+    @include mixins.ns-font-display-lg();
+}
+
+.ns-font-display {
+    @include mixins.ns-font-display();
+}
+
+.ns-font-display-sm {
+    @include mixins.ns-font-display-sm();
+}
+
+.ns-font-headline-lg {
+    @include mixins.ns-font-headline-lg();
+}
+
+.ns-font-headline {
+    @include mixins.ns-font-headline();
+}
+
+.ns-font-headline-sm {
+    @include mixins.ns-font-headline-sm();
+}
+
+.ns-font-title-lg {
+    @include mixins.ns-font-title-lg();
+}
+
+.ns-font-title {
+    @include mixins.ns-font-title();
+}
+
+.ns-font-title-sm {
+    @include mixins.ns-font-title-sm();
+}
+
+.ns-font-body-lg {
+    @include mixins.ns-font-body-lg();
+}
+
+.ns-font-body {
+    @include mixins.ns-font-body();
+}
+
+.ns-font-body-sm {
+    @include mixins.ns-font-body-sm();
+}
+
+.ns-font-label-lg {
+    @include mixins.ns-font-label-lg();
+}
+
+.ns-font-label {
+    @include mixins.ns-font-label();
+}
+
+.ns-font-label-sm {
+    @include mixins.ns-font-label-sm();
+}
+
+.ns-font-overline {
+    @include mixins.ns-font-overline();
+}
+
+

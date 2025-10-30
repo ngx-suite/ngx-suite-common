@@ -1,14 +1,14 @@
 @use 'mixins';
 
-.e2e-container {
-    @include mixins.e2e-container();
+.ns-e2e-container {
+    @include mixins.ns-e2e-container();
 
     &__body {
-        @include mixins.e2e-container-body();
+        @include mixins.ns-e2e-container-body();
     }
 
     &__body-with-scroll {
-        @include mixins.e2e-container-body-with-scroll();
+        @include mixins.ns-e2e-container-body-with-scroll();
     }
 
 }

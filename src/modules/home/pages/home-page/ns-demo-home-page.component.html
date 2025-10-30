@@ -1,16 +1,60 @@
 <div class="sm:container py-5 sm:mx-auto">
-    <mat-card appearance="raised" class="">
-        <mat-card-header>
-            <mat-card-title>
-                Ngx Suite - Common
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="py-4!">
-            <p>
-                This is a demo page for the Ngx Suite.
-            </p>
-        </mat-card-content>
-    </mat-card>
+    <h1 class="ns-font-display-lg text-center py-8">
+        Ngx Suite - Common
+    </h1>
+
+
+    <h1 class="ns-font-display mb-4">
+        Alert
+    </h1>
+    <div class="row py-4!">
+        <div class="col-lg-6 flex flex-col gap-4">
+            <ns-alert severity="info">
+                Some short message
+            </ns-alert>
+
+            <ns-alert severity="info">
+                <ns-icon name="check" nsAlertIcon></ns-icon>
+                Some short message
+                <button mat-stroked-button nsAlertAction>Action</button>
+            </ns-alert>
+
+            <ns-alert severity="success">
+                <ns-icon name="check" nsAlertIcon></ns-icon>
+                <div class="ns-font-title">Alert Title</div>
+                Some short message
+                <button mat-stroked-button nsAlertAction>Action</button>
+            </ns-alert>
+
+            <ns-alert severity="error">
+                <ns-icon name="check" nsAlertIcon></ns-icon>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer malesuada. Donec ipsum massa, ullamcorper in,
+                auctor et, scelerisque sed, est. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Integer tempor. Suspendisse nisl. Curabitur vitae diam non enim vestibulum interdum. Sed elit
+                dui, pellentesque a, faucibus vel, interdum nec, diam. Aenean id metus id velit ullamcorper pulvinar. Itaque
+                earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+                perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur bibendum justo non
+                orci.
+                <button mat-stroked-button nsAlertAction>Action</button>
+            </ns-alert>
+
+            <ns-alert severity="warning">
+                <ns-icon name="check" nsAlertIcon></ns-icon>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer malesuada. Donec ipsum massa, ullamcorper in,
+                auctor et, scelerisque sed, est. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Integer tempor. Suspendisse nisl. Curabitur vitae diam non enim vestibulum interdum. Sed elit
+                dui, pellentesque a, faucibus vel, interdum nec, diam. Aenean id metus id velit ullamcorper pulvinar. Itaque
+                earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+                perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur bibendum justo non
+                orci.
+                <button mat-stroked-button nsAlertAction>Action</button>
+            </ns-alert>
+        </div>
+    </div>
 </div>
 
 

@@ -22,7 +22,11 @@
     "prepare": "husky",
     "install": "npm i --force",
     "copy-lib-assets": "shx cp -r \"projects/ngx-suite-common/**/assets/\" \"dist/ngx-suite-common/\" && shx cp -r \"projects/ngx-suite-common/**/styles/\" \"dist/ngx-suite-common/\"",
-    "pre-pull-request": "npm run lint && npm run test"
+    "pre-pull-request": "npm run lint && npm run test",
+    "-------------------------NGX-SUITE--DEVKIT-COMMANDS--------------------------":  "",
+    "ns::sync-angular-env": "ng g @ngx-suite/devkit:sync-ang-env --source-dir-path=projects/ngx-suite-common --parent-lib-alias=@ngx-suite/common",
+    "ns::clean-up-ang-env": "ng g @ngx-suite/devkit:clean-up-ang-env --project-name=ngx-suite-common-demo",
+    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/components/icon --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +39,7 @@
     "@angular/material-moment-adapter": "20.2.9",
     "@angular/platform-browser": "20.3.6",
     "@angular/router": "20.3.6",
+    "@ngx-suite/devkit": "20.0.0",
     "@tailwindcss/postcss": "4.1.14",
     "rxjs": "7.8.2",
     "tailwindcss": "4.1.14",

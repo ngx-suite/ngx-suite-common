@@ -5,7 +5,7 @@
 $border-side: top, bottom, left, right, all;
 $border-style-default-settings: (style: solid, color: var(--ns-color-neutral-40), width: 1px);
 
-@mixin border-style($side, $settings: $border-style-default-settings) {
+@mixin ns-border-style($side, $settings: $border-style-default-settings) {
     @if not list.index($border-side, $side) {
         @error '#{$side} is not a valid side. Expected one of #{$border-side}.';
     }

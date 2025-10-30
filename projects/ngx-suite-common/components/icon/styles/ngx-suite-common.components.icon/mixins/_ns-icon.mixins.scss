@@ -1,0 +1,63 @@
+//
+// SIZE
+//
+
+@mixin ns-mat-icon-size($size: var(--ns-font-size-icon)) {
+    font-size: $size;
+    height: $size;
+    line-height: $size;
+    width: $size;
+
+    svg {
+        height: $size;
+        width: $size;
+    }
+}
+
+@mixin ns-icon-size($size: var(--ns-font-size-icon)) {
+    ns-icon {
+        @include ns-mat-icon-size($size);
+
+        .mat-icon {
+            @include ns-mat-icon-size($size);
+        }
+    }
+}
+
+@mixin ns-icon-self-size($size: var(--ns-font-size-icon)) {
+    @include ns-mat-icon-size($size);
+
+    .mat-icon {
+        @include ns-mat-icon-size($size);
+    }
+}
+
+@mixin any-icon-size($size: var(--ns-font-size-icon)) {
+    @include ns-icon-size($size);
+
+    mat-icon.mat-icon {
+        @include ns-mat-icon-size($size);
+    }
+}
+
+//
+// COLOR
+//
+
+@mixin ns-icon-color($color) {
+    ns-icon {
+        color: $color;
+
+        .mat-icon {
+            color: $color;
+        }
+    }
+}
+
+@mixin ns-icon-self-color($color) {
+    color: $color;
+
+    .mat-icon {
+        color: $color;
+    }
+}
