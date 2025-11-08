@@ -1,0 +1,124 @@
+@use 'sass:math';
+@import 'vars';
+@import 'mixins';
+
+
+$side-padding: 1rem;
+$menu-item-border-radius: $border-radius--200;
+$menu-panel-min-width: 280px;
+$menu-item-color: $color-text;
+$menu-item-icon-color: $color-neutral-300;
+$menu-item-bg-color--hover: $color-neutral-20;
+
+:root {
+    --mat-menu-item-hover-state-layer-color: #{$menu-item-bg-color--hover};
+    --mat-menu-item-focus-state-layer-color: #{$menu-item-bg-color--hover};
+}
+
+body {
+    --mdc-shape-medium: 8px;
+}
+
+.mat-mdc-menu-item krm-icon[matMenuItemIcon] {
+    margin-right: 8px;
+}
+
+.mat-mdc-menu-panel[role='menu'] {
+    @include krm-border-style(all);
+    @include shadow-hover();
+    border-radius: $menu-item-border-radius;
+    max-width: none;
+
+    .mat-divider {
+        margin-left: -$side-padding;
+        margin-right: -$side-padding;
+    }
+
+    .mat-mdc-menu-content:not(:empty) {
+        min-width: $menu-panel-min-width;
+        padding: 8px $side-padding;
+    }
+}
+
+.mat-mdc-menu-content,
+.mat-mdc-menu-content .mat-mdc-menu-item {
+    --mat-menu-item-label-text-size: #{$font-size--body-lg};
+    --mat-menu-item-label-text-line-height: 24px;
+    --mat-menu-item-label-text-weight: 400;
+    --mat-menu-item-label-text-tracking: 0;
+}
+
+.mat-mdc-menu-content .mat-mdc-menu-item {
+    align-items: center;
+    border-radius: 8px;
+    border-style: none;
+    color: $menu-item-color;
+    display: flex;
+    height: auto;
+    margin: 0.25rem -#{$side-padding / 2};
+    max-width: calc(100% + #{$side-padding});
+    min-height: 40px;
+    padding: 0 0.5rem;
+    text-decoration: none;
+    width: calc(100% + #{$side-padding});
+
+    krm-icon {
+        align-items: center;
+        color: $menu-item-icon-color;
+
+        > .mat-icon {
+            margin: 0;
+        }
+    }
+
+    .mat-mdc-menu-item-text {
+        color: $menu-item-color;
+        flex: 1;
+        max-width: 100%;
+    }
+
+    krm-icon,
+    .mat-icon {
+        color: $menu-item-icon-color;
+        margin: 0 0.5rem 0 0;
+    }
+
+    &:hover {
+        background-color: $menu-item-bg-color--hover;
+        color: $menu-item-color;
+        text-decoration: none;
+    }
+
+    &.active,
+    &.active:hover {
+        background-color: $color-primary-50;
+
+        .mat-mdc-menu-item-text {
+            color: $color-primary-300;
+            font-weight: 500;
+        }
+
+        krm-icon,
+        .mat-icon {
+            color: $color-primary-300;
+        }
+    }
+}
+
+.krm-mat-menu-group-label {
+    @include krm-font-label();
+    color: $color-neutral-90;
+    padding: 16px 0 8px;
+}
+
+.krm-mat-menu-auto-width {
+    .mat-mdc-menu-content:not(:empty) {
+        min-width: 0;
+    }
+}
+
+.krm-mat-menu--small.mat-mdc-menu-panel {
+    .mat-mdc-menu-content:not(:empty) {
+        min-width: 180px;
+    }
+}

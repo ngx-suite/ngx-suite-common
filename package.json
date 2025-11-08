@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --hmr",
     "build": "ng build",
     "build-demo": "npm run lint && npm run test && npm run build-demo",
     "build-lib": "ng build ngx-suite-common-lib && npm run copy-lib-assets",
@@ -20,13 +20,13 @@
     "lint:styles:fix": "stylelint \"src/**/*.scss\" \"projects/**/*.scss\" --fix",
     "lint-staged": "lint-staged",
     "prepare": "husky",
-    "install": "npm i --force",
+    "install-deps": "npm i --force",
     "copy-lib-assets": "shx cp -r \"projects/ngx-suite-common/**/assets/\" \"dist/ngx-suite-common/\" && shx cp -r \"projects/ngx-suite-common/**/styles/\" \"dist/ngx-suite-common/\"",
     "pre-pull-request": "npm run lint && npm run test",
-    "-------------------------NGX-SUITE--DEVKIT-COMMANDS--------------------------":  "",
+    "-------------------------NGX-SUITE--DEVKIT-COMMANDS--------------------------": "",
     "ns::sync-angular-env": "ng g @ngx-suite/devkit:sync-ang-env --source-dir-path=projects/ngx-suite-common --parent-lib-alias=@ngx-suite/common",
     "ns::clean-up-ang-env": "ng g @ngx-suite/devkit:clean-up-ang-env --project-name=ngx-suite-common-demo",
-    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/components/icon --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
+    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/components/button --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
   },
   "private": true,
   "dependencies": {
@@ -40,9 +40,8 @@
     "@angular/platform-browser": "20.3.6",
     "@angular/router": "20.3.6",
     "@ngx-suite/devkit": "20.0.0",
-    "@tailwindcss/postcss": "4.1.14",
+    "bootstrap": "5.3.8",
     "rxjs": "7.8.2",
-    "tailwindcss": "4.1.14",
     "tslib": "2.3.1",
     "zone.js": "0.15.0"
   },
@@ -70,7 +69,6 @@
     "jest-preset-angular": "15.0.3",
     "lint-staged": "15.2.11",
     "ng-packagr": "20.3.0",
-    "postcss": "8.4.49",
     "shx": "0.4.0",
     "stylelint": "16.11.0",
     "stylelint-config-alphabetical-order": "1.0.0",

@@ -1,0 +1,42 @@
+@use 'mixins';
+
+.ns-border-style--solid {
+    @include mixins.ns-border-style(all);
+}
+
+.ns-border-style-bottom--solid {
+    @include mixins.ns-border-style(bottom);
+}
+
+.ns-border-style-top--solid {
+    @include mixins.ns-border-style(top);
+}
+
+.ns-border-style-left--solid {
+    @include mixins.ns-border-style(left);
+}
+
+.ns-border-style-right--solid {
+    @include mixins.ns-border-style(right);
+}
+
+.ns-border-style-right--none {
+    border-right-style: none;
+}
+
+.ns-border-style-left--none {
+    border-left-style: none;
+}
+
+.ns-border-style--dashed {
+    border-style: dashed !important;
+}
+
+.ns-border-right-style--dashed {
+    border-right-style: dashed !important;
+}
+
+.ns-border-top-style--dashed {
+    border-top-style: dashed !important;
+}
+

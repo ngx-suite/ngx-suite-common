@@ -15,12 +15,21 @@ import { NsIconRegistry } from '../../services'
 })
 export class NsIconComponent {
 
-    readonly name = model.required<string>()
+    readonly name = model<string>()
     readonly size = model<NsIconSize>(NsIconSize.basic)
     //
-    readonly iconName = computed<string>(() => extractIconName(this.name()))
-    readonly isMatOutlined = computed<boolean>(() => this.name() ? isMatOutlined(this.name()) : false)
-    readonly isSvgIcon = computed<boolean>(() => this.name() ? this.nsIconRegistry.doesIconExist(this.name()) : false)
+    readonly iconName = computed<string | null>(() => {
+        const iconAlias = this.name()
+        return iconAlias ? extractIconName(iconAlias) : null
+    })
+    readonly isMatOutlined = computed<boolean>(() => {
+        const iconAlias = this.name()
+        return iconAlias ? isMatOutlined(iconAlias) : false
+    })
+    readonly isSvgIcon = computed<boolean>(() => {
+        const iconAlias = this.name()
+        return iconAlias ? this.nsIconRegistry.doesIconExist(iconAlias) : false
+    })
 
     // DI
     protected readonly nsIconRegistry = inject(NsIconRegistry)

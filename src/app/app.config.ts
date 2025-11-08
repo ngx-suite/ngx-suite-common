@@ -3,6 +3,7 @@ import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } fr
 import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card'
 import { BrowserModule } from '@angular/platform-browser'
 import { provideRouter } from '@angular/router'
+import { provideNsDefaultIcons } from '@ngx-suite/common/components/icon'
 
 import { routes } from './app.routes'
 
@@ -19,5 +20,6 @@ export const appConfig: ApplicationConfig = {
                 appearance: 'outlined',
             } as MatCardConfig,
         },
+        provideNsDefaultIcons(),
     ],
 }

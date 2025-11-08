@@ -1,0 +1,274 @@
+@use '@angular/material' as mat;
+@use 'ngx-suite-common.components.icon/mixins' as iconMixins;
+
+:root {
+    --ns-mat-button-container-height: 40px;
+    --ns-mat-button-container-shape: 12px;
+    --ns-mat-button-icon-size: var(--ns-font-size-icon);
+    --ns-mat-button-icon-offset: 0;
+    --ns-mat-button-icon-spacing: 8px;
+    --ns-mat-button-horizontal-padding: 12px;
+    --ns-mat-button-state-opacity: 0.07;
+
+    --ns-mat-text-button-text-color: var(--ns-color-neutral-900);
+    --ns-mat-text-button-state-color: var(--ns-color-neutral-900);
+    --ns-mat-text-button-container-color: transparent;
+    --ns-mat-text-button-outline-color: transparent;
+    --ns-mat-text-button-outline-size: 0;
+    --ns-mat-text-button-text-color-disabled: var(--ns-color-neutral-60);
+    --ns-mat-text-button-container-color-disabled: transparent;
+    --ns-mat-text-button-outline-color-disabled: transparent;
+
+    --ns-mat-outlined-button-text-color: var(--ns-color-neutral-900);
+    --ns-mat-outlined-button-state-color: var(--ns-color-neutral-900);
+    --ns-mat-outlined-button-container-color: var(--ns-color-neutral-0);
+    --ns-mat-outlined-button-outline-color: var(--ns-color-neutral-40);
+    --ns-mat-outlined-button-outline-size: 1px;
+    --ns-mat-outlined-button-text-color-disabled: var(--ns-color-neutral-60);
+    --ns-mat-outlined-button-container-color-disabled: var(--ns-color-neutral-40);
+    --ns-mat-outlined-button-outline-color-disabled: var(--ns-color-neutral-40);
+
+    --ns-mat-filled-button-text-color: var(--ns-color-neutral-0);
+    --ns-mat-filled-button-state-color: var(--ns-color-neutral-0);
+    --ns-mat-filled-button-container-color: var(--ns-color-primary-300);
+    --ns-mat-filled-button-text-color-disabled: var(--ns-color-neutral-60);
+    --ns-mat-filled-button-container-color-disabled: var(--ns-color-neutral-40);
+
+    --ns-mat-icon-button-text-color: var(--ns-color-neutral-900);
+    --ns-mat-icon-button-state-color: var(--ns-color-neutral-900);
+    --ns-mat-icon-button-container-color: transparent;
+    --ns-mat-icon-button-outline-color: transparent;
+    --ns-mat-icon-button-outline-size: 0;
+    --ns-mat-icon-button-text-color-disabled: var(--ns-color-neutral-60);
+    --ns-mat-icon-button-container-color-disabled: transparent;
+    --ns-mat-icon-button-outline-color-disabled: transparent;
+}
+
+.mat-mdc-button {
+    @include mat.button-overrides((
+        text-label-text-color: var(--ns-mat-text-button-text-color),
+        text-ripple-color: var(--ns-mat-text-button-state-color),
+        text-state-layer-color: var(--ns-mat-text-button-state-color),
+        text-hover-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        text-focus-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        text-pressed-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        text-container-height: var(--ns-mat-button-container-height),
+        text-container-shape: var(--ns-mat-button-container-shape),
+        text-icon-offset: var(--ns-mat-button-icon-offset),
+        text-icon-spacing: var(--ns-mat-button-icon-spacing),
+        text-horizontal-padding: var(--ns-mat-button-horizontal-padding),
+        text-with-icon-horizontal-padding: var(--ns-mat-button-horizontal-padding),
+        text-disabled-label-text-color: var(--ns-mat-text-button-text-color-disabled),
+    ));
+
+    &.mat-primary {
+        --ns-mat-text-button-text-color: var(--ns-color-primary-300);
+        --ns-mat-text-button-state-color: var(--ns-color-primary-300);
+    }
+
+    &.mat-accent {
+        --ns-mat-text-button-text-color: var(--ns-color-warning-300);
+        --ns-mat-text-button-state-color: var(--ns-color-warning-300);
+    }
+
+    &.mat-warn {
+        --ns-mat-text-button-text-color: var(--ns-color-error-300);
+        --ns-mat-text-button-state-color: var(--ns-color-error-300);
+    }
+}
+
+.mat-mdc-outlined-button {
+    @include mat.button-overrides((
+        outlined-label-text-color: var(--ns-mat-outlined-button-text-color),
+        outlined-ripple-color: var(--ns-mat-outlined-button-state-color),
+        outlined-state-layer-color: var(--ns-mat-outlined-button-state-color),
+        outlined-outline-color: var(--ns-mat-outlined-button-outline-color),
+        outlined-outline-width: var(--ns-mat-outlined-button-outline-size),
+        outlined-hover-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        outlined-focus-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        outlined-pressed-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        outlined-container-height: var(--ns-mat-button-container-height),
+        outlined-container-shape: var(--ns-mat-button-container-shape),
+        outlined-icon-offset: var(--ns-mat-button-icon-offset),
+        outlined-icon-spacing: var(--ns-mat-button-icon-spacing),
+        outlined-horizontal-padding: var(--ns-mat-button-horizontal-padding),
+        outlined-disabled-outline-color: var(--ns-mat-outlined-button-outline-color-disabled),
+        outlined-disabled-label-text-color: var(--ns-mat-outlined-button-text-color-disabled),
+    ));
+
+    &.mat-primary {
+        --ns-mat-outlined-button-text-color: var(--ns-color-primary-300);
+        --ns-mat-outlined-button-state-color: var(--ns-color-primary-300);
+        --ns-mat-outlined-button-container-color: var(--ns-color-primary-50);
+        --ns-mat-outlined-button-outline-color: var(--ns-color-primary-300);
+    }
+
+    &.mat-accent {
+        --ns-mat-outlined-button-text-color: var(--ns-color-warning-300);
+        --ns-mat-outlined-button-state-color: var(--ns-color-warning-300);
+        --ns-mat-outlined-button-container-color: var(--ns-color-warning-50);
+        --ns-mat-outlined-button-outline-color: var(--ns-color-warning-300);
+    }
+
+    &.mat-warn {
+        --ns-mat-outlined-button-text-color: var(--ns-color-error-300);
+        --ns-mat-outlined-button-state-color: var(--ns-color-error-300);
+        --ns-mat-outlined-button-container-color: var(--ns-color-error-50);
+        --ns-mat-outlined-button-outline-color: var(--ns-color-error-300);
+    }
+}
+
+.mat-mdc-unelevated-button {
+    @include mat.button-overrides((
+        filled-container-color: var(--ns-mat-filled-button-container-color),
+        filled-label-text-color: var(--ns-mat-filled-button-text-color),
+        filled-ripple-color: var(--ns-mat-filled-button-state-color),
+        filled-state-layer-color: var(--ns-mat-filled-button-state-color),
+        filled-hover-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        filled-focus-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        filled-pressed-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        filled-container-height: var(--ns-mat-button-container-height),
+        filled-container-shape: var(--ns-mat-button-container-shape),
+        filled-icon-offset: var(--ns-mat-button-icon-offset),
+        filled-icon-spacing: var(--ns-mat-button-icon-spacing),
+        filled-horizontal-padding: var(--ns-mat-button-horizontal-padding),
+        filled-disabled-container-color: var(--ns-mat-filled-button-container-color-disabled),
+        filled-disabled-label-text-color: var(--ns-mat-filled-button-text-color-disabled),
+    ));
+
+    &.mat-accent {
+        --ns-mat-filled-button-container-color: var(--ns-color-warning-300);
+    }
+
+    &.mat-warn {
+        --ns-mat-filled-button-container-color: var(--ns-color-error-300);
+    }
+}
+
+.mat-mdc-icon-button {
+    @include mat.icon-button-overrides((
+        icon-color: var(--ns-mat-icon-button-text-color),
+        state-layer-color: var(--ns-mat-icon-button-state-color),
+        ripple-color: var(--ns-mat-icon-button-state-color),
+        state-layer-size: var(--ns-mat-button-container-height),
+        hover-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        focus-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        pressed-state-layer-opacity: var(--ns-mat-button-state-opacity),
+        disabled-icon-color: var(--ns-mat-icon-button-text-color-disabled),
+    ));
+
+    --mdc-icon-button-state-layer-size: var(--ns-mat-button-container-height);
+    --mdc-icon-button-icon-size: var(--ns-mat-button-icon-size);
+
+    &.mat-primary {
+        --ns-mat-icon-button-text-color: var(--ns-color-primary-300);
+        --ns-mat-icon-button-state-color: var(--ns-color-primary-300);
+    }
+
+    &.mat-accent {
+        --ns-mat-icon-button-text-color: var(--ns-color-warning-300);
+        --ns-mat-icon-button-state-color: var(--ns-color-warning-300);
+    }
+
+    &.mat-warn {
+        --ns-mat-icon-button-text-color: var(--ns-color-error-300);
+        --ns-mat-icon-button-state-color: var(--ns-color-error-300);
+    }
+}
+
+//
+// CUSTOM OVERRIDES
+// Keep as small as possible
+//
+
+button,
+a {
+    &.mat-mdc-button,
+    &.mat-mdc-outlined-button,
+    &.mat-mdc-unelevated-button {
+        text-decoration: none;
+        white-space: nowrap;
+
+        > .mat-icon {
+            @include iconMixins.ns-icon-size(var(--ns-mat-button-icon-size));
+            vertical-align: top;
+        }
+
+        > ns-icon {
+            @include iconMixins.ns-icon-self-size(var(--ns-mat-button-icon-size));
+            margin-left: var(--ns-mat-button-icon-offset);
+            margin-right: var(--ns-mat-button-icon-spacing);
+        }
+
+        .mdc-button__label + ns-icon {
+            margin-left: var(--ns-mat-button-icon-spacing);
+            margin-right: var(--ns-mat-button-icon-offset);
+        }
+
+        .mat-mdc-button-touch-target {
+            height: var(--ns-mat-button-container-height);
+        }
+    }
+
+    &.mat-mdc-button {
+        background-color: var(--ns-mat-text-button-container-color);
+        border-color: var(--ns-mat-text-button-outline-color);
+        border-style: solid;
+        border-width: var(--ns-mat-text-button-outline-size);
+
+        &[disabled],
+        &.mat-mdc-button-disabled {
+            background-color: var(--ns-mat-text-button-container-color-disabled);
+            border-color: var(--ns-mat-text-button-outline-color-disabled);
+        }
+    }
+
+    &.mat-mdc-outlined-button {
+        background-color: var(--ns-mat-outlined-button-container-color);
+
+        &[disabled],
+        &.mat-mdc-button-disabled {
+            background-color: var(--ns-mat-outlined-button-container-color-disabled);
+        }
+    }
+
+    &.mat-mdc-icon-button {
+        background-color: var(--ns-mat-icon-button-container-color);
+        border-color: var(--ns-mat-icon-button-outline-color);
+        border-radius: var(--ns-mat-button-container-shape);
+        border-style: solid;
+        border-width: var(--ns-mat-icon-button-outline-size);
+
+        > .mat-icon {
+            @include iconMixins.ns-mat-icon-size(var(--ns-mat-button-icon-size));
+            vertical-align: top;
+        }
+
+        > ns-icon {
+            @include iconMixins.ns-icon-self-size(var(--ns-mat-button-icon-size));
+            line-height: 1;
+        }
+
+        .mat-mdc-button-touch-target {
+            width: var(--ns-mat-button-container-height);
+        }
+
+        .mat-mdc-button-persistent-ripple {
+            border-radius: var(--ns-mat-button-container-shape);
+        }
+
+        &[disabled],
+        &.mat-mdc-button-disabled {
+            background-color: var(--ns-mat-icon-button-container-color-disabled);
+            border-color: var(--ns-mat-icon-button-outline-color-disabled);
+        }
+    }
+
+    &.mat-mdc-button-base {
+        transition: 200ms color, 200ms background-color, 200ms border;
+
+        .mat-ripple {
+            opacity: var(--ns-mat-button-state-opacity);
+        }
+    }
+}

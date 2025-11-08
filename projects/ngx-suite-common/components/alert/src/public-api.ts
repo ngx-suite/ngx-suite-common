@@ -1,3 +1,2 @@
 export * from './components'
-export * from './directives'
-export * from './models/public-api'
+export * from './models'

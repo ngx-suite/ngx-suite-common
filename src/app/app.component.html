@@ -1,1 +1,29 @@
-<router-outlet />
+<mat-drawer-container class="kl-light__drawer-container vh-100"
+                      [autosize]="true">
+
+    <mat-drawer mode="side" opened class="px-3 ns-border-style-right--solid">
+        <div class="d-flex align-items-center justify-content-center pt-3">
+            <img src="angular-logo.png" alt="logo" class="w-50">
+        </div>
+        <h1 class="ns-font-title-lg text-center py-3">
+            NGX Suite
+        </h1>
+        <mat-nav-list>
+            @for (tab of tabs; track tab) {
+                <a #link="routerLinkActive"
+                   [class.mdc-list-item--activated]="link.isActive"
+                   mat-list-item
+                   routerLinkActive
+                   routerLink="{{tab.route}}"
+                >
+                    {{ tab.label }}
+                </a>
+            }
+        </mat-nav-list>
+    </mat-drawer>
+
+    <mat-drawer-content class="p-5 pt-0">
+        <router-outlet />
+    </mat-drawer-content>
+</mat-drawer-container>
+

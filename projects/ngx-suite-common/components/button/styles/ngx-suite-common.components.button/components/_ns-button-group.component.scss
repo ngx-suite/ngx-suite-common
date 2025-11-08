@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+
+ns-button-group,
+[ns-button-group] {
+    align-items: center;
+    display: inline-flex;
+
+    > .mat-mdc-button-base {
+        &.mat-mdc-icon-button {
+            //padding: calc(calc(calc(var(--ns-mat-button-container-height) - var(--ns-mat-button-icon-size)) / 2)) !important;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            --ns-mat-button-container-shape: 0;
+        }
+
+        &:first-child:not(:last-child) {
+            --ns-mat-button-container-shape: 8px 0 0 8px;
+        }
+
+        &:last-child:not(:first-child) {
+            --ns-mat-button-container-shape: 0 8px 8px 0;
+        }
+
+        + .mat-mdc-button-base,
+        + .mat-mdc-button-base.ns-button {
+            --ns-mat-outlined-button-outline-size: 1px 1px 1px 0;
+            --ns-mat-icon-button-outline-size: 1px 1px 1px 0;
+        }
+
+    }
+}

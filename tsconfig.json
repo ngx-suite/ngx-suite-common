@@ -34,6 +34,9 @@
             ],
             "@ngx-suite/common/components/icon": [
                 "projects/ngx-suite-common/components/icon/src/public-api"
+            ],
+            "@ngx-suite/common/components/button": [
+                "projects/ngx-suite-common/components/button/src/public-api"
             ]
         }
     },

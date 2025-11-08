@@ -1,8 +1,20 @@
 @use 'tailwindcss';
 @use 'vars';
 @use 'ngx-suite-common/material-design/themes/theme-ngx-suite-green';
+@use 'ngx-suite-common/bootstrap' as bootstrap;
 @use 'ngx-suite-common/common' as common;
 @use 'ngx-suite-common.components' as components;
 @use 'ngx-suite-common.components.icon' as icon;
 @use 'ngx-suite-common.components.alert' as alert;
+@use 'ngx-suite-common.components.button' as button;
+@use '@angular/material' as mat;
+
+
+:root {
+    @include mat.sidenav-overrides((
+        container-width: 288px,
+        container-divider-color: var(--ns-color-neutral-40),
+    ));
+}
+
 

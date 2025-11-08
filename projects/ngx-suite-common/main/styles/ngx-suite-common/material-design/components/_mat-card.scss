@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@import 'vars';
+@import 'mixins';
+
+:root {
+    @include mat.card-overrides((
+        outlined-container-shape: 8px,
+        elevated-container-shape: 8px,
+        title-text-size: $font-size--title-lg,
+        title-text-weight: 500,
+        title-text-line-height: 28px,
+        subtitle-text-color: $color-neutral-300,
+        subtitle-text-size: $font-size--body,
+        subtitle-text-weight: 400,
+        subtitle-text-line-height: 20px,
+    ));
+}
+
+mat-card-header.mat-mdc-card-header {
+    align-items: center;
+    min-height: 48px;
+}
+
+mat-card-actions.mat-mdc-card-actions {
+    padding: 0 1rem 1rem;
+}
+
+
+

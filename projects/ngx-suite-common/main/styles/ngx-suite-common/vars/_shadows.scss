@@ -1,4 +1,16 @@
 :root {
     --ns-shadow-hover: 0 4px 16px 0 rgba(0, 0, 0, 0.16);
+    --vivid-pink: oklch(69.02% .277 332.77);
+    --electric-violet: oklch(53.18% .28 296.97);
+    --orange-red: oklch(63.32% .24 31.68);
+    --bright-blue: oklch(51.01% .274 263.83);
+    --pink-to-highlight-to-purple-to-blue-horizontal-gradient: linear-gradient(140deg,
+        var(--vivid-pink) 0%,
+        var(--vivid-pink) 15%,
+        color-mix(in srgb, var(--vivid-pink), var(--electric-violet) 50%) 25%,
+        color-mix(in srgb, var(--vivid-pink), var(--electric-violet) 10%) 35%,
+        color-mix(in srgb, var(--vivid-pink), var(--orange-red) 50%) 42%,
+        color-mix(in srgb, var(--vivid-pink), var(--orange-red) 50%) 50%,
+        var(--electric-violet));
 }
 

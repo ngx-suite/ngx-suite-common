@@ -40,6 +40,11 @@
                                 "glob": "**/*",
                                 "input": "projects/ngx-suite-common/components/icon/assets",
                                 "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/components/button/assets",
+                                "output": "/assets"
                             }
                         ],
                         "styles": [
@@ -57,7 +62,8 @@
                                 "projects/ngx-suite-common/components/main/styles",
                                 "projects/ngx-suite-common/utils/main/styles",
                                 "projects/ngx-suite-common/components/alert/styles",
-                                "projects/ngx-suite-common/components/icon/styles"
+                                "projects/ngx-suite-common/components/icon/styles",
+                                "projects/ngx-suite-common/components/button/styles"
                             ]
                         }
                     },
@@ -80,7 +86,8 @@
                         "development": {
                             "optimization": false,
                             "extractLicenses": false,
-                            "sourceMap": true
+                            "sourceMap": true,
+                            "namedChunks": true
                         }
                     },
                     "defaultConfiguration": "production"

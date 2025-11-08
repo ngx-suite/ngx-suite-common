@@ -1,0 +1,124 @@
+@use '@angular/material' as mat;
+@use 'ngx-suite-common.components.icon/mixins' as iconMixins;
+
+.ns-button {
+    &.ns-button-size {
+        &--small {
+            --ns-mat-button-container-height: 24px;
+            --ns-mat-button-container-shape: 8px;
+            --ns-mat-button-icon-size: var(--ns-font-size-icon--small);
+            --ns-mat-button-icon-offset: 0;
+            --ns-mat-text-button-outline-size: 0;
+            --ns-mat-button-icon-spacing: 4px;
+            --ns-mat-button-horizontal-padding: 8px;
+        }
+    }
+
+    &.mat-mdc-button {
+        &.ns-button-style {
+            &--flat {
+                --ns-mat-text-button-container-color: var(--ns-color-primary-300);
+                --ns-mat-text-button-text-color: var(--ns-color-neutral-0);
+                --ns-mat-text-button-state-color: var(--ns-color-neutral-0);
+                --ns-mat-text-button-container-color-disabled: var(--ns-color-neutral-40);
+                --ns-mat-text-button-outline-color-disabled: var(--ns-color-neutral-40);
+
+                &.mat-accent {
+                    --ns-mat-text-button-container-color: var(--ns-color-warning-300);
+                }
+
+                &.mat-warn {
+                    --ns-mat-text-button-container-color: var(--ns-color-error-300);
+                }
+            }
+
+            &--stroked {
+                --ns-mat-text-button-container-color: var(--ns-color-neutral-0);
+                --ns-mat-text-button-outline-color: var(--ns-color-neutral-40);
+                --ns-mat-text-button-container-color-disabled: var(--ns-color-neutral-40);
+                --ns-mat-text-button-outline-color-disabled: var(--ns-color-neutral-40);
+                --ns-mat-text-button-outline-size: 1px;
+
+                &.mat-primary {
+                    --ns-mat-text-button-container-color: var(--ns-color-primary-50);
+                    --ns-mat-text-button-outline-color: var(--ns-color-primary-300);
+                }
+
+                &.mat-accent {
+                    --ns-mat-text-button-container-color: var(--ns-color-warning-50);
+                    --ns-mat-text-button-outline-color: var(--ns-color-warning-300);
+                }
+
+                &.mat-warn {
+                    --ns-mat-text-button-container-color: var(--ns-color-error-50);
+                    --ns-mat-text-button-outline-color: var(--ns-color-error-300);
+                }
+            }
+        }
+    }
+
+    &.mat-mdc-icon-button {
+        padding: calc(calc(calc(var(--ns-mat-button-container-height) - var(--ns-mat-button-icon-size)) / 2));
+
+        &.ns-button-style {
+            &--flat {
+                --ns-mat-icon-button-container-color: var(--ns-color-primary-300);
+                --ns-mat-icon-button-text-color: var(--ns-color-neutral-0);
+                --ns-mat-icon-button-state-color: var(--ns-color-neutral-0);
+                --ns-mat-icon-button-container-color-disabled: var(--ns-color-neutral-40);
+
+                &.mat-accent {
+                    --ns-mat-icon-button-container-color: var(--ns-color-warning-300);
+                }
+
+                &.mat-warn {
+                    --ns-mat-icon-button-container-color: var(--ns-color-error-300);
+                }
+            }
+
+            &--stroked {
+                --ns-mat-icon-button-container-color: var(--ns-color-neutral-0);
+                --ns-mat-icon-button-outline-color: var(--ns-color-neutral-40);
+                --ns-mat-icon-button-outline-size: 1px;
+                --ns-mat-icon-button-container-color-disabled: var(--ns-color-neutral-40);
+                --ns-mat-icon-button-outline-color-disabled: var(--ns-color-neutral-40);
+
+                &.mat-primary {
+                    --ns-mat-icon-button-container-color: var(--ns-color-primary-50);
+                    --ns-mat-icon-button-outline-color: var(--ns-color-primary-300);
+                }
+
+                &.mat-accent {
+                    --ns-mat-icon-button-container-color: var(--ns-color-warning-50);
+                    --ns-mat-icon-button-outline-color: var(--ns-color-warning-300);
+                }
+
+                &.mat-warn {
+                    --ns-mat-icon-button-container-color: var(--ns-color-error-50);
+                    --ns-mat-icon-button-outline-color: var(--ns-color-error-300);
+                }
+            }
+        }
+    }
+}
+
+// nsExpandIcon
+button,
+a {
+    &.mat-mdc-button,
+    &.mat-mdc-outlined-button,
+    &.mat-mdc-unelevated-button {
+        > ns-icon[nsExpandIcon] {
+            @include iconMixins.ns-icon-self-size(var(--ns-font-size-icon--small));
+        }
+    }
+
+    &.mat-mdc-button,
+    &.mat-mdc-outlined-button {
+        &:not(.mat-warn):not(.mat-primary):not(.mat-accent):not(.mat-mdc-button-disabled) > ns-icon[nsExpandIcon] {
+            color: var(--ns-color-neutral-90);
+        }
+    }
+
+}
+

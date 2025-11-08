@@ -1,0 +1,705 @@
+<mat-card class="mb-3">
+    <mat-card-content>
+        <div class="d-flex align-items-center w-100">
+            <div mat-card-title>
+                Buttons
+            </div>
+            <div class="d-flex gap-3 flex-1 d-flex justify-content-end">
+                <mat-checkbox [(ngModel)]="buttonDisabled">Disabled</mat-checkbox>
+                <mat-button-toggle-group [(value)]="buttonSize">
+                    <mat-button-toggle [value]="ButtonSize.basic">Basic</mat-button-toggle>
+                    <mat-button-toggle [value]="ButtonSize.small">Small</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mb-3">
+    <mat-card-header>
+        <div mat-card-title>
+            Basic Buttons
+        </div>
+    </mat-card-header>
+    <mat-card-content class="pt-3">
+        <div class="example-row">
+            <div class="example-column">
+                <h3>Button</h3>
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-button>Default</button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-stroked-button>Default</button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-flat-button>Default</button>
+            </div>
+            <div class="example-column">
+                <h3>Button (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-stroked-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-flat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-stroked-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-flat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Link</h3>
+
+                <a [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" href="/" mat-button target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" href="/" mat-stroked-button target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" href="/" mat-flat-button target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+            </div>
+            <div class="example-column">
+                <h3>Icon (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" nsStrokedButton mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" nsFlatButton mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Icon (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" nsStrokedButton mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" nsFlatButton mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mb-3">
+    <mat-card-header>
+        <div mat-card-title>
+            Primary Buttons
+        </div>
+    </mat-card-header>
+    <mat-card-content class="pt-3">
+        <div class="example-row">
+            <div class="example-column">
+                <h3>Button</h3>
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-button>Default
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-stroked-button>
+                    Default
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-flat-button>
+                    Default
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-stroked-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-flat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-stroked-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-flat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Link</h3>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="primary"
+                   href="/"
+                   mat-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="primary"
+                   href="/"
+                   mat-stroked-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="primary"
+                   href="/"
+                   mat-flat-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+            </div>
+            <div class="example-column">
+                <h3>Icon (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="primary"
+                        nsStrokedButton
+                        mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="primary"
+                        nsFlatButton
+                        mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Icon (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="primary" mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="primary"
+                        nsStrokedButton
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="primary"
+                        nsFlatButton
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mb-3">
+    <mat-card-header>
+        <div mat-card-title>
+            Accent Buttons
+        </div>
+    </mat-card-header>
+    <mat-card-content class="pt-3">
+        <div class="example-row">
+            <div class="example-column">
+                <h3>Button</h3>
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-button>Default
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-stroked-button>
+                    Default
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-flat-button>
+                    Default
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-stroked-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-flat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-stroked-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-flat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Link</h3>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="accent"
+                   href="/"
+                   mat-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="accent"
+                   href="/"
+                   mat-stroked-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="accent"
+                   href="/"
+                   mat-flat-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+            </div>
+            <div class="example-column">
+                <h3>Icon (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="accent"
+                        nsStrokedButton
+                        mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="accent"
+                        nsFlatButton
+                        mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Icon (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="accent" mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="accent"
+                        nsStrokedButton
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="accent"
+                        nsFlatButton
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mb-3">
+    <mat-card-header>
+        <div mat-card-title>
+            Warn Buttons
+        </div>
+    </mat-card-header>
+    <mat-card-content class="pt-3">
+        <div class="example-row">
+            <div class="example-column">
+                <h3>Button</h3>
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-button>Default
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-stroked-button>
+                    Default
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-flat-button>Default
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-stroked-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-flat-button>
+                    <ns-icon matButtonIcon name="ns-copy"/>
+                    KRM Icons
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon/>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Button (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-stroked-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-flat-button>
+                    <mat-icon matButtonIcon>trending_up</mat-icon>
+                    MAT Icons
+                    <mat-icon iconPositionEnd matButtonIcon>sync</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Link</h3>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="warn"
+                   href="/"
+                   mat-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="warn"
+                   href="/"
+                   mat-stroked-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+
+                <a [disabled]="buttonDisabled"
+                   [nsButtonSize]="buttonSize"
+                   color="warn"
+                   href="/"
+                   mat-flat-button
+                   target="_blank">
+                    <mat-icon matButtonIcon>check</mat-icon>
+                    Link
+                    <mat-icon iconPositionEnd matButtonIcon>check</mat-icon>
+                </a>
+            </div>
+            <div class="example-column">
+                <h3>Icon (mat-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="warn"
+                        nsStrokedButton
+                        mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="warn"
+                        nsFlatButton
+                        mat-icon-button>
+                    <mat-icon>check</mat-icon>
+                </button>
+            </div>
+            <div class="example-column">
+                <h3>Icon (ns-icon)</h3>
+
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" color="warn" mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="warn"
+                        nsStrokedButton
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        color="warn"
+                        nsFlatButton
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="mb-3">
+    <mat-card-header>
+        <div class="d-flex align-items-center w-100">
+            <div mat-card-title>
+                Dynamic
+                <i>(nsButtonStyle)</i>
+            </div>
+            <div class="flex-1 d-flex justify-content-end">
+                <mat-button-toggle-group [(value)]="buttonStyle">
+                    <mat-button-toggle [value]="ButtonStyle.basic">Basic</mat-button-toggle>
+                    <mat-button-toggle [value]="ButtonStyle.stroked">Stroked</mat-button-toggle>
+                    <mat-button-toggle [value]="ButtonStyle.flat">Flat</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="pt-3">
+        <div class="example-row">
+            <div class="example-column">
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        mat-button>
+                    Default
+                </button>
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+            <div class="example-column">
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        color="primary"
+                        mat-button>
+                    Default
+                </button>
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        color="primary"
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+            <div class="example-column">
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        color="accent"
+                        mat-button>
+                    Default
+                </button>
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        color="accent"
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+            <div class="example-column">
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        color="warn"
+                        mat-button>
+                    Default
+                </button>
+                <button [disabled]="buttonDisabled"
+                        [nsButtonSize]="buttonSize"
+                        [nsButtonStyle]="buttonStyle"
+                        color="warn"
+                        mat-icon-button>
+                    <ns-icon name="ns-copy"/>
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<div class="row mb-3 g-3">
+    <div class="col-xl-6">
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-title>
+                    Button Group
+                </div>
+            </mat-card-header>
+            <mat-card-content class="pt-3">
+                <ns-button-group>
+                    <button mat-stroked-button>
+                        Start
+                    </button>
+                    <button mat-stroked-button>
+                        Stop
+                    </button>
+                    <button nsStrokedButton
+                            mat-icon-button>
+                        <ns-icon name="more_vert"/>
+                    </button>
+                </ns-button-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-xl-6">
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-title>
+                    Icon with Expand
+                </div>
+            </mat-card-header>
+            <mat-card-content class="pt-3">
+                <button [disabled]="buttonDisabled" [nsButtonSize]="buttonSize" mat-stroked-button>
+                    <ns-icon name="ns-copy"/>
+                    <ns-icon iconPositionEnd matButtonIcon nsExpandIcon />
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+
+
+

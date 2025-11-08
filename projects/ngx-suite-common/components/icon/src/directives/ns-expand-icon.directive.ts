@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core'
+import { Directive, inject } from '@angular/core'
 
 import { NsIconComponent } from '../components'
 
@@ -8,7 +8,9 @@ import { NsIconComponent } from '../components'
 })
 export class NsExpandIconDirective {
 
-    constructor(private readonly nsIconComponent: NsIconComponent) {
+    protected readonly nsIconComponent = inject(NsIconComponent)
+
+    constructor() {
         this.nsIconComponent.name.set('ns-arrow-chevron-down')
     }
 
