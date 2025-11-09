@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 // Configuration
-const FOLDER_PATH = path.join(__dirname, '../', 'src/modules/components/pages/button/mat-buttons')
+const FOLDER_PATH = path.join(__dirname, '../', 'projects/ngx-suite-common/utils/date/src')
 const OLD_PREFIX = 'krm-'
 const NEW_PREFIX = 'ns-'
 

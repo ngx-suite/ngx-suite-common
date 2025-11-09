@@ -40,3 +40,27 @@
     border-top-style: dashed !important;
 }
 
+.ns-border-radius--0 {
+    border-radius: var(--ns-border-radius--none) !important;
+}
+
+.ns-border-radius--sm {
+    border-radius: var(--ns-border-radius--sm) !important;
+}
+
+.ns-border-radius--md {
+    border-radius: var(--ns-border-radius--md) !important;
+}
+
+.ns-border-radius--lg {
+    border-radius: var(--ns-border-radius--lg) !important;
+}
+
+.ns-border-radius--xl {
+    border-radius: var(--ns-border-radius--xl) !important;
+}
+
+.ns-border-radius--surface {
+    border-radius: var(--ns-border-radius--surface) !important;
+}
+

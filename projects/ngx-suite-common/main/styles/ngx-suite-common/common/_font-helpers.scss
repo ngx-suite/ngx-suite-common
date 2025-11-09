@@ -36,6 +36,10 @@
     @include mixins.ns-font-title-sm();
 }
 
+.ns-font-body-xl {
+    @include mixins.ns-font-body-xl();
+}
+
 .ns-font-body-lg {
     @include mixins.ns-font-body-lg();
 }
@@ -62,6 +66,10 @@
 
 .ns-font-overline {
     @include mixins.ns-font-overline();
+}
+
+.text-justify {
+    text-align: justify !important;
 }
 
 

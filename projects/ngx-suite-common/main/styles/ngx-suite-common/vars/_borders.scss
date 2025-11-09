@@ -1,6 +1,9 @@
 :root {
-    --ns-border-radius: 1rem;
+    --ns-border-radius--none: 0;
     --ns-border-radius--sm: 0.5rem;
-    --ns-border-radius--lg: 2rem;
+    --ns-border-radius--md: 0.75rem;
+    --ns-border-radius--lg: 1.5rem;
+    --ns-border-radius--xl: 2rem;
+    --ns-border-radius--surface: var(--ns-border-radius--lg);
 }
 

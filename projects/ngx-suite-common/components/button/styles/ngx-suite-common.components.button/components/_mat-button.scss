@@ -3,7 +3,7 @@
 
 :root {
     --ns-mat-button-container-height: 40px;
-    --ns-mat-button-container-shape: 12px;
+    --ns-mat-button-container-shape: var(--ns-border-radius--md);
     --ns-mat-button-icon-size: var(--ns-font-size-icon);
     --ns-mat-button-icon-offset: 0;
     --ns-mat-button-icon-spacing: 8px;

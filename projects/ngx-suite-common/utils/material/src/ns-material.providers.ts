@@ -1,0 +1,82 @@
+import { Provider } from '@angular/core'
+import { MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS, MatButtonToggleDefaultOptions } from '@angular/material/button-toggle'
+import { MAT_CHECKBOX_DEFAULT_OPTIONS, MatCheckboxDefaultOptions } from '@angular/material/checkbox'
+import { MAT_CHIPS_DEFAULT_OPTIONS, MatChipsDefaultOptions } from '@angular/material/chips'
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core'
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig } from '@angular/material/dialog'
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material/form-field'
+import { MAT_LIST_CONFIG, MatListConfig } from '@angular/material/list'
+import { MAT_RADIO_DEFAULT_OPTIONS, MatRadioDefaultOptions } from '@angular/material/radio'
+import { MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS, MatSlideToggleDefaultOptions } from '@angular/material/slide-toggle'
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter'
+
+import { NsMatDateFormatProviderService } from './services'
+
+
+export function provideNsMaterialDefaults(): Provider[] {
+
+    return [
+        {
+            provide: MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS,
+            useValue: {
+                hideSingleSelectionIndicator: true,
+                hideMultipleSelectionIndicator: true,
+            } as MatButtonToggleDefaultOptions,
+        },
+        {
+            provide: MAT_CHECKBOX_DEFAULT_OPTIONS,
+            useValue: {
+                color: 'primary',
+            } as MatCheckboxDefaultOptions,
+        },
+        {
+            provide: MAT_RADIO_DEFAULT_OPTIONS,
+            useValue: {
+                color: 'primary',
+            } as MatRadioDefaultOptions,
+        },
+        {
+            provide: MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS,
+            useValue: {
+                color: 'primary',
+                hideIcon: true,
+            } as MatSlideToggleDefaultOptions,
+        },
+        {
+            provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+            useValue: {
+                color: 'primary',
+                appearance: 'fill',
+                floatLabel: 'auto',
+            } as MatFormFieldDefaultOptions,
+        },
+        {
+            provide: MAT_DIALOG_DEFAULT_OPTIONS,
+            useValue: {
+                enterAnimationDuration: 0,
+                exitAnimationDuration: 0,
+            } as MatDialogConfig,
+        },
+        {
+            provide: MAT_CHIPS_DEFAULT_OPTIONS,
+            useValue: {
+                hideSingleSelectionIndicator: true,
+            } as MatChipsDefaultOptions,
+        },
+        {
+            provide: MAT_LIST_CONFIG,
+            useValue: {
+                hideSingleSelectionIndicator: true,
+            } as MatListConfig,
+        },
+        {
+            provide: MAT_DATE_FORMATS,
+            useExisting: NsMatDateFormatProviderService,
+        },
+        {
+            provide: DateAdapter,
+            useClass: MomentDateAdapter,
+            deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],
+        },
+    ]
+}

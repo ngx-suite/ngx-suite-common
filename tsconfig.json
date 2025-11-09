@@ -37,6 +37,12 @@
             ],
             "@ngx-suite/common/components/button": [
                 "projects/ngx-suite-common/components/button/src/public-api"
+            ],
+            "@ngx-suite/common/utils/material": [
+                "projects/ngx-suite-common/utils/material/src/public-api"
+            ],
+            "@ngx-suite/common/utils/date": [
+                "projects/ngx-suite-common/utils/date/src/public-api"
             ]
         }
     },

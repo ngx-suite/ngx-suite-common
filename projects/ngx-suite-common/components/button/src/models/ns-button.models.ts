@@ -9,8 +9,8 @@ export namespace NsButton {
     export type ButtonStyle = 'basic' | 'flat' | 'stroked'
     export const ButtonStyle = {
         basic: 'basic' as ButtonStyle,
-        flat: 'flat' as ButtonStyle,
         stroked: 'stroked' as ButtonStyle,
+        flat: 'flat' as ButtonStyle,
     }
 
     export const BASE_CLASS_NAME = 'ns-button'

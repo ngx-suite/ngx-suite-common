@@ -4,6 +4,8 @@ import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card'
 import { BrowserModule } from '@angular/platform-browser'
 import { provideRouter } from '@angular/router'
 import { provideNsDefaultIcons } from '@ngx-suite/common/components/icon'
+import { provideNsMaterialDefaults } from '@ngx-suite/common/utils/material'
+import { provideMarkdown } from 'ngx-markdown'
 
 import { routes } from './app.routes'
 
@@ -21,5 +23,7 @@ export const appConfig: ApplicationConfig = {
             } as MatCardConfig,
         },
         provideNsDefaultIcons(),
+        provideMarkdown(),
+        provideNsMaterialDefaults(),
     ],
 }

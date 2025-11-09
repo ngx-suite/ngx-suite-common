@@ -5,7 +5,7 @@
     &.ns-button-size {
         &--small {
             --ns-mat-button-container-height: 24px;
-            --ns-mat-button-container-shape: 8px;
+            --ns-mat-button-container-shape: var(--ns-border-radius--sm);
             --ns-mat-button-icon-size: var(--ns-font-size-icon--small);
             --ns-mat-button-icon-offset: 0;
             --ns-mat-text-button-outline-size: 0;
@@ -82,6 +82,7 @@
                 --ns-mat-icon-button-outline-size: 1px;
                 --ns-mat-icon-button-container-color-disabled: var(--ns-color-neutral-40);
                 --ns-mat-icon-button-outline-color-disabled: var(--ns-color-neutral-40);
+                padding: calc(calc(calc(var(--ns-mat-button-container-height) - var(--ns-mat-button-icon-size)) / 2) - 1px);
 
                 &.mat-primary {
                     --ns-mat-icon-button-container-color: var(--ns-color-primary-50);

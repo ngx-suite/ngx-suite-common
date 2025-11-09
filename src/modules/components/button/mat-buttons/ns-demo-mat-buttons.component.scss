@@ -2,8 +2,11 @@
 
 .example-row {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
     justify-content: flex-start;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1rem 0;
 
     .example-column {
         align-items: flex-start;

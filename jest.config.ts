@@ -28,6 +28,7 @@ const packagesToTransformWithBabel = [
 
 const config: JestConfigWithTsJest = {
     ...presetConfig,
+    globalSetup: './jest-global-setup.js',
     modulePaths: [compilerOptions.baseUrl],
     moduleNameMapper: {
         ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),

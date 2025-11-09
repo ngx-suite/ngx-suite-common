@@ -45,12 +45,29 @@
                                 "glob": "**/*",
                                 "input": "projects/ngx-suite-common/components/button/assets",
                                 "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/utils/material/assets",
+                                "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/utils/date/assets",
+                                "output": "/assets"
                             }
                         ],
                         "styles": [
-                            "src/styles/styles.scss"
+                            "src/styles/styles.scss",
+                            "node_modules/prismjs/themes/prism-okaidia.css",
+                            "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"
                         ],
-                        "scripts": [],
+                        "scripts": [
+                            "node_modules/prismjs/prism.js",
+                            "node_modules/prismjs/components/prism-typescript.min.js",
+                            "node_modules/prismjs/components/prism-css.min.js",
+                            "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js"
+                        ],
                         "stylePreprocessorOptions": {
                             "sass": {
                                 "silenceDeprecations": [
@@ -63,7 +80,9 @@
                                 "projects/ngx-suite-common/utils/main/styles",
                                 "projects/ngx-suite-common/components/alert/styles",
                                 "projects/ngx-suite-common/components/icon/styles",
-                                "projects/ngx-suite-common/components/button/styles"
+                                "projects/ngx-suite-common/components/button/styles",
+                                "projects/ngx-suite-common/utils/material/styles",
+                                "projects/ngx-suite-common/utils/date/styles"
                             ]
                         }
                     },

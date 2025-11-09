@@ -52,6 +52,12 @@
     line-height: 20px;
 }
 
+@mixin ns-font-body-xl {
+    font-size: var(--ns-font-size--body-xl);
+    font-weight: 400;
+    line-height: 32px;
+}
+
 @mixin ns-font-body-lg {
     font-size: var(--ns-font-size--body-lg);
     font-weight: 400;

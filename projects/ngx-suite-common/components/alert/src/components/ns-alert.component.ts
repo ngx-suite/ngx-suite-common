@@ -17,7 +17,7 @@ import { NsAlert } from '../models'
 })
 export class NsAlertComponent {
 
-    readonly severity = input<NsAlert.Severity>(NsAlert.Severity.warning)
+    readonly severity = input<NsAlert.Severity>(NsAlert.Severity.neutral)
 
     readonly Severity = NsAlert.Severity
 

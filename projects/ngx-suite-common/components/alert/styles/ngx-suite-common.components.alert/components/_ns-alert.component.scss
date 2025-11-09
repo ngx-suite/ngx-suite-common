@@ -1,44 +1,75 @@
 @use 'mixins';
 @use 'ngx-suite-common.components.icon/mixins' as iconMixins;
 
+:root {
+    --ns-alert-shape: var(--ns-border-radius--surface);
+    --ns-alert-color: var(--ns-color-neutral-900);
+    // error
+    --ns-alert-icon-color--error: var(--ns-color-error-300);
+    --ns-alert-bg-color--error: var(--ns-color-error-50);
+    // warning
+    --ns-alert-icon-color--warning: var(--ns-color-warning-300);
+    --ns-alert-bg-color--warning: var(--ns-color-warning-50);
+    // success
+    --ns-alert-icon-color--success: var(--ns-color-success-300);
+    --ns-alert-bg-color--success: var(--ns-color-success-50);
+    // info
+    --ns-alert-icon-color--info: var(--ns-color-info-300);
+    --ns-alert-bg-color--info: var(--ns-color-info-50);
+    // neutral
+    --ns-alert-icon-color--neutral: var(--ns-color-neutral-300);
+    --ns-alert-bg-color--neutral: var(--ns-color-neutral-20);
+}
 
 .ns-alert {
+    --ns-alert-icon-color: var(--ns-alert-icon-color--neutral);
+    --ns-alert-bg-color: var(--ns-alert-bg-color--neutral);
     align-items: center;
-    border-radius: var(--ns-border-radius);
+    background-color: var(--ns-alert-bg-color);
+    border-radius: var(--ns-alert-shape);
     display: flex;
     gap: 1rem;
     overflow-wrap: anywhere;
     padding: 1rem;
 
+    [nsAlertIcon] {
+        @include iconMixins.ns-icon-self-color(var(--ns-alert-icon-color));
+    }
+
     &--error {
-        @include iconMixins.ns-icon-color(var(--ns-color-error-300));
-        background-color: var(--ns-color-error-50);
+        --ns-alert-icon-color: var(--ns-alert-icon-color--error);
+        --ns-alert-bg-color: var(--ns-alert-bg-color--error);
     }
 
     &--warning {
-        @include iconMixins.ns-icon-color(var(--ns-color-warning-300));
-        background-color: var(--ns-color-warning-50);
+        --ns-alert-icon-color: var(--ns-alert-icon-color--warning);
+        --ns-alert-bg-color: var(--ns-alert-bg-color--warning);
     }
 
     &--success {
-        @include iconMixins.ns-icon-color(var(--ns-color-success-300));
-        background-color: var(--ns-color-success-50);
+        --ns-alert-icon-color: var(--ns-alert-icon-color--success);
+        --ns-alert-bg-color: var(--ns-alert-bg-color--success);
     }
 
     &--info {
-        @include iconMixins.ns-icon-color(var(--ns-color-info-300));
-        background-color: var(--ns-color-info-50);
+        --ns-alert-icon-color: var(--ns-alert-icon-color--info);
+        --ns-alert-bg-color: var(--ns-alert-bg-color--info);
     }
 
     &--neutral {
-        @include iconMixins.ns-icon-color(var(--ns-color-neutral-300));
-        background-color: var(--ns-color-neutral-20);
+        --ns-alert-icon-color: var(----ns-alert-bg-color--neutral);
+        --ns-alert-bg-color: var(--ns-alert-bg-color--neutral);
     }
 
     &__content {
         @include mixins.ns-font-body-lg();
-        color: var(--ns-color-neutral-900);
+        color: var(--ns-alert-color);
         flex: 1;
-        width: 0;
+    }
+}
+
+@include mixins.media-breakpoint-down(sm) {
+    .ns-alert {
+        flex-direction: column;
     }
 }
