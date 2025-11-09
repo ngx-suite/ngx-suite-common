@@ -1,9 +1,10 @@
-@import 'vars';
-@import 'mixins';
+@use 'mixins';
 
 .mat-drawer-container {
-    --mat-sidenav-container-background-color: #{$color-neutral-0};
-    --mat-sidenav-content-background-color: #{$color-neutral-0};
-    --mat-sidenav-container-text-color: #{$color-text};
-    --mat-sidenav-content-text-color: #{$color-text};
+    --mat-sidenav-container-background-color: var(--ns-color-neutral-0);
+    --mat-sidenav-content-background-color: var(--ns-color-neutral-0);
+    --mat-sidenav-container-text-color: var(--ns-color-text);
+    --mat-sidenav-content-text-color: var(--ns-color-text);
 }
+
+

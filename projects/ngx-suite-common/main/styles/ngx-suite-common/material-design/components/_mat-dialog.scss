@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
-@import 'vars';
-@import 'mixins';
+
+@use 'mixins';
 
 
 :root {
@@ -8,7 +8,7 @@
         content-padding: 1rem,
         with-actions-content-padding: 1rem 1rem 0,
         container-shape: 8px,
-        container-elevation-shadow: #{$shadow-hover}
+        container-elevation-shadow: var(--ns-shadow-hover)
     ));
 }
 
@@ -22,8 +22,8 @@
     position: relative;
 
     .mdc-dialog__content {
-        --mdc-dialog-supporting-text-color: $color-neutral-900;
-        @include krm-font-body-lg();
+        --mdc-dialog-supporting-text-color: var(--ns-color-neutral-900);
+        @include mixins.ns-font-body-lg();
     }
 
     .mdc-dialog__actions {

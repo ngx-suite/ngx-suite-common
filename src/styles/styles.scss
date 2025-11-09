@@ -1,6 +1,7 @@
 @use 'tailwindcss';
 @use 'vars';
-@use 'ngx-suite-common/material-design/themes/theme-ngx-suite-green';
+@use 'ngx-suite-common/material-design/themes/theme-ngx-suite-blue';
+@use 'ngx-suite-common/material-design/components' as materialComponents;
 @use 'ngx-suite-common/bootstrap' as bootstrap;
 @use 'ngx-suite-common/common' as common;
 @use 'ngx-suite-common.components' as components;
@@ -13,9 +14,13 @@
 
 :root {
     @include mat.sidenav-overrides((
-        container-width: 288px,
+        container-width: 320px,
         container-divider-color: var(--ns-color-neutral-40),
     ));
+}
+
+body {
+    background-image: var(--body-bg-gradient);
 }
 
 

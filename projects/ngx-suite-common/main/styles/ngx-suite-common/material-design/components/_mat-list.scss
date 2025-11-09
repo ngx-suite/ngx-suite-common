@@ -3,7 +3,7 @@
 :root {
     @include mat.list-overrides((
         list-item-one-line-container-height: auto,
-        list-item-supporting-text-color: $color-neutral-90,
+        list-item-supporting-text-color: var(--ns-color-neutral-90),
         list-item-supporting-text-size: 12px,
         list-item-supporting-text-line-height: 16px,
     ));

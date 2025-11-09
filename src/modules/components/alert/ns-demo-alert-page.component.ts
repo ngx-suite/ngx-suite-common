@@ -2,12 +2,10 @@ import { Component } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { MatButton, MatIconButton } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
-import { MatDivider } from '@angular/material/divider'
 import { MatIcon } from '@angular/material/icon'
-import { NsAlert, NsAlertComponent } from '@ngx-suite/common/components/alert'
+import { NsAlertComponent } from '@ngx-suite/common/components/alert'
 import { NsButtonStyleDirective } from '@ngx-suite/common/components/button'
 import { NsIconComponent } from '@ngx-suite/common/components/icon'
-import { NsObjValuesPipe } from '@ngx-suite/common/utils'
 import { MarkdownComponent } from 'ngx-markdown'
 
 
@@ -23,14 +21,10 @@ import { MarkdownComponent } from 'ngx-markdown'
         MatIconButton,
         NsButtonStyleDirective,
         MatIcon,
-        NsObjValuesPipe,
-        MatDivider,
     ],
     templateUrl: './ns-demo-alert-page.component.html',
 })
 export class NsDemoAlertPageComponent {
-
-    readonly Severity = NsAlert.Severity
 
     get markdownEnums(): string {
         return `\`\`\`typescript

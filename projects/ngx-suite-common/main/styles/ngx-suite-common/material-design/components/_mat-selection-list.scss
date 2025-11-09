@@ -1,20 +1,17 @@
 @use '@angular/material' as mat;
 @use 'sass:math';
-
-@import 'vars';
-@import 'mixins';
-
+@use 'mixins';
 
 :root {
     @include mat.list-overrides((
         list-item-one-line-container-height: auto,
-        list-item-selected-container-color: $color-primary-50,
+        list-item-selected-container-color: var(--ns-color-primary-50),
     ));
 }
 
-$list-option-border-radius: 8px;
-$list-option-bg--hover: $color-neutral-20;
-$list-option-bg--focus: $color-neutral-20;
+$list-option-border-radius: var(--ns-border-radius-md);
+$list-option-bg--hover: var(--ns-color-neutral-20);
+$list-option-bg--focus: var(--ns-color-neutral-20);
 
 $selection-control-size: 16px;
 $selection-control-container-size: 24px;
@@ -37,8 +34,8 @@ mat-selection-list.mat-mdc-list-base {
     --mdc-list-list-item-container-shape: #{$list-option-border-radius};
     --mdc-list-list-item-hover-state-layer-opacity: 0;
     --mdc-list-list-item-focus-state-layer-opacity: 0;
-    --mdc-checkbox-unselected-icon-color: #{$color-neutral-60};
-    --mdc-radio-unselected-icon-color: #{$color-neutral-60};
+    --mdc-checkbox-unselected-icon-color: var(--ns-color-neutral-60);
+    --mdc-radio-unselected-icon-color: var(--ns-color-neutral-60);
 
     .mat-mdc-list-option {
         margin-bottom: 4px;
@@ -93,10 +90,10 @@ mat-selection-list.mat-mdc-list-base {
     }
 
     .mdc-list-item--selected {
-        --mdc-list-list-item-label-text-color: #{$color-primary-300};
-        --mdc-list-list-item-hover-label-text-color: #{$color-primary-300};
-        --mdc-list-list-item-focus-label-text-color: #{$color-primary-300};
-        --mdc-list-list-item-label-text-size: #{$font-size--title};
+        --mdc-list-list-item-label-text-color: var(--ns-color-primary-300);
+        --mdc-list-list-item-hover-label-text-color: var(--ns-color-primary-300);
+        --mdc-list-list-item-focus-label-text-color: var(--ns-color-primary-300);
+        --mdc-list-list-item-label-text-size: var(--ns-font-size--title);
         --mdc-list-list-item-label-text-weight: 500;
     }
 

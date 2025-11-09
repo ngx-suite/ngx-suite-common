@@ -1,4 +1,4 @@
-import { Inject, Injectable, Optional } from '@angular/core'
+import { inject, Injectable } from '@angular/core'
 import { MatIconRegistry } from '@angular/material/icon'
 import { DomSanitizer } from '@angular/platform-browser'
 
@@ -11,10 +11,12 @@ export class NsIconRegistry {
     protected readonly defaultBasePath: string = NS_ICON_DEFAULT_BASE_PATH
     protected readonly iconsSet = new Set<string>()
 
-    constructor(
-        @Inject(NS_ICON_PROVIDER) @Optional() protected iconsProviders: NsIconsProvider[],
-        protected iconRegistry: MatIconRegistry,
-        protected sanitizer: DomSanitizer) {
+    // DI
+    protected readonly iconsProviders = inject<NsIconsProvider[]>(NS_ICON_PROVIDER, { optional: true })
+    protected readonly iconRegistry = inject(MatIconRegistry)
+    protected readonly sanitizer = inject(DomSanitizer)
+
+    constructor() {
 
         this.registerAllProviders()
 

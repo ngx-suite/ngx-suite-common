@@ -1,11 +1,9 @@
-@import 'vars';
-@import 'mixins';
-
+@use 'mixins';
 
 .mat-mdc-progress-bar {
     --mdc-linear-progress-active-indicator-height: 8px;
     --mdc-linear-progress-track-height: 8px;
-    --mdc-linear-progress-track-color: #{$color-neutral-40};
+    --mdc-linear-progress-track-color: var(--ns-color-neutral-40);
     border-radius: 4px;
 
     .mdc-linear-progress__bar-inner {

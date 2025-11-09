@@ -1,31 +1,29 @@
-@import 'vars';
-@import 'mixins';
+@use 'mixins';
 
-$container-border-radius: 8px;
+$container-border-radius: var(--ns-border-radius--ms);
+$border-color--normal: var(--ns-color-neutral-40);
+$border-color--hover: var(--ns-color-neutral-60);
+$border-color--focus: var(--ns-color-primary-300);
+$border-color--error: var(--ns-color-error-300);
 
-$border-color--normal: $color-neutral-40;
-$border-color--hover: $color-neutral-60;
-$border-color--focus: $color-primary-300;
-$border-color--error: $color-error-300;
+$border-color: var(--ns-color-neutral-40);
+$label-color: var(--ns-color-neutral-60);
+$label-color--focus: var(--ns-color-primary-300);
+$label-color--disabled: var(--ns-color-neutral-60);
+$label-color--error: var(--ns-color-error-300);
 
-$border-color: $color-neutral-40;
-$label-color: $color-neutral-60;
-$label-color--focus: $color-primary-300;
-$label-color--disabled: $color-neutral-60;
-$label-color--error: $color-error-300;
+$checkbox-label-color: var(--ns-color-neutral-900);
+$hint-color: var(--ns-color-neutral-60);
 
-$checkbox-label-color: $color-neutral-900;
-$hint-color: $color-neutral-60;
+$value-color: var(--ns-color-neutral-900);
+$value-color--disabled: var(--ns-color-neutral-60);
+$value-color--error: var(--ns-color-error-300);
 
-$value-color: $color-neutral-900;
-$value-color--disabled: $color-neutral-60;
-$value-color--error: $color-error-300;
-
-$assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
+$assets-icons-path: 'assets/images/ngx-suite-common';
 
 .mat-mdc-form-field {
     // chips
-    --mdc-chip-elevated-container-color: #{$color-neutral-30};
+    --mdc-chip-elevated-container-color: var(--ns-color-neutral-30);
     --mdc-filled-text-field-error-hover-label-text-color: #{$label-color--error};
     --mdc-filled-text-field-hover-label-text-color: #{$label-color};
 
@@ -48,7 +46,7 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
     }
 
     .mat-mdc-text-field-wrapper.mdc-text-field--filled {
-        background: $color-neutral-0;
+        background: var(--ns-color-neutral-0);
         border: 1px solid $border-color--normal;
         border-radius: $container-border-radius;
 
@@ -82,12 +80,12 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
                 color: $value-color;
 
                 &::placeholder {
-                    color: $color-neutral-60;
+                    color: var(--ns-color-neutral-60);
                 }
             }
 
             .mdc-floating-label--required {
-                color: $color-error-300;
+                color: var(--ns-color-error-300);
             }
         }
 
@@ -105,7 +103,7 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
         }
 
         &.mdc-text-field--disabled {
-            background: $color-neutral-10;
+            background: var(--ns-color-neutral-10);
 
             .mdc-floating-label {
                 color: $label-color--disabled;
@@ -142,8 +140,8 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
         color: $checkbox-label-color;
     }
 
-    .mat-mdc-form-field-icon-prefix > krm-icon,
-    .mat-mdc-form-field-icon-suffix > krm-icon {
+    .mat-mdc-form-field-icon-prefix > ns-icon,
+    .mat-mdc-form-field-icon-suffix > ns-icon {
         box-sizing: content-box;
         padding: 12px;
     }
@@ -160,10 +158,10 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
 
         .mdc-evolution-chip {
 
-            @include krm-font-body();
-            background-color: $color-neutral-30;
+            @include mixins.ns-font-body();
+            background-color: var(--ns-color-neutral-30);
             border-radius: 8px;
-            color: $color-neutral-900;
+            color: var(--ns-color-neutral-900);
             margin: 0;
             padding: 0;
 
@@ -172,8 +170,8 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
             }
 
             .mat-mdc-chip-remove {
-                @include icon-size($font-size-icon--small);
-                color: $color-neutral-900;
+                @include mixins.ns-mat-icon-size(var(--ns-font-size-icon--small));
+                color: var(--ns-color-neutral-900);
                 opacity: 0.8;
 
                 &:hover {
@@ -185,13 +183,13 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
 
     // rewrite select arrow
     .mat-mdc-select-arrow-wrapper {
-        height: $font-size-icon--small;
-        width: $font-size-icon--small;
+        height: var(--ns-font-size-icon--small);
+        width: var(--ns-font-size-icon--small);
 
         > .mat-mdc-select-arrow {
-            background-color: $color-neutral-60;
+            background-color: var(--ns-color-neutral-60);
             height: 100%;
-            mask: url('#{$assets-icons-path}/krm-arrow-chevron-down.svg');
+            mask: url('#{$assets-icons-path}/ns-arrow-chevron-down.svg');
             mask-repeat: no-repeat;
             mask-size: 100%;
             padding: 0;
@@ -207,7 +205,7 @@ $assets-icons-path: 'assets/images/krm-common/icons/krm-icons';
 $control-height--small: 40px;
 
 
-.krm-mat-form-field--small {
+.ns-mat-form-field--small {
     mat-form-field.mat-mdc-form-field {
 
         --mat-form-field-container-height: 40px;
@@ -250,8 +248,8 @@ $control-height--small: 40px;
         }
 
         // INPUT SUFFIX/PREFIX
-        .mat-mdc-form-field-icon-prefix > krm-icon,
-        .mat-mdc-form-field-icon-suffix > krm-icon,
+        .mat-mdc-form-field-icon-prefix > ns-icon,
+        .mat-mdc-form-field-icon-suffix > ns-icon,
         .mat-mdc-form-field-icon-prefix > mat-icon,
         .mat-mdc-form-field-icon-suffix > mat-icon {
             box-sizing: content-box;
@@ -285,7 +283,7 @@ $control-height--small: 40px;
     }
 }
 
-.krm-form-field-group {
+.ns-form-field-group {
     align-items: center;
     border: 1px solid $border-color--normal;
     border-radius: $container-border-radius;
@@ -314,8 +312,8 @@ $control-height--small: 40px;
 }
 
 .mat-option-desc {
-    @include krm-font-label();
-    color: $color-neutral-60;
+    @include mixins.ns-font-label();
+    color: var(--ns-color-neutral-60);
 }
 
 .mat-internal-form-field > label.mdc-label {

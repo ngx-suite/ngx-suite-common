@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
-@import 'vars';
-@import 'mixins';
+
+@use 'mixins';
 
 $_radio-size: 16px;
 $radio-container-size: 32px;
@@ -8,11 +8,11 @@ $radio-container-size: 32px;
 :root {
     @include mat.radio-overrides((
         state-layer-size: $radio-container-size,
-        unselected-icon-color: $color-neutral-60,
-        unselected-focus-icon-color: $color-neutral-60,
-        unselected-hover-icon-color: $color-neutral-60,
-        disabled-unselected-icon-color: $color-neutral-40,
-        disabled-selected-icon-color: $color-neutral-40,
+        unselected-icon-color: var(--ns-color-neutral-60),
+        unselected-focus-icon-color: var(--ns-color-neutral-60),
+        unselected-hover-icon-color: var(--ns-color-neutral-60),
+        disabled-unselected-icon-color: var(--ns-color-neutral-40),
+        disabled-selected-icon-color: var(--ns-color-neutral-40),
     ));
 }
 

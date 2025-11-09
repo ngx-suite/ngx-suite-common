@@ -2,6 +2,75 @@
     <h1 class="ns-font-display-lg mb-5 text-center">
         Alert
     </h1>
+    <mat-card class="mt-5">
+        <mat-card-header>
+            <div mat-card-title>
+                Alerts Overview
+            </div>
+        </mat-card-header>
+        <mat-card-content class="pt-3">
+            <div class="row py-3">
+                <div class="flex flex-col gap-3 d-flex flex-column">
+
+                    <ns-alert severity="neutral">
+                        <mat-icon nsAlertIcon>check</mat-icon>
+                        Some short message
+                        <button mat-icon-button nsSmallButton nsStrokedButton nsAlertAction>
+                            <ns-icon name="ns-close" />
+                        </button>
+                    </ns-alert>
+
+                    <ns-alert severity="info">
+                        <mat-icon nsAlertIcon>check</mat-icon>
+                        Some short message
+                        <button mat-icon-button nsSmallButton nsStrokedButton nsAlertAction>
+                            <ns-icon name="ns-close" />
+                        </button>
+                    </ns-alert>
+
+                    <ns-alert severity="success">
+                        <ns-icon name="check" nsAlertIcon></ns-icon>
+                        <div class="ns-font-title">Alert Title</div>
+                        Some short message
+                        <button mat-stroked-button nsAlertAction>Action</button>
+                        <button mat-icon-button nsStrokedButton nsAlertAction>
+                            <ns-icon name="ns-more-actions" />
+                        </button>
+                    </ns-alert>
+
+
+                    <ns-alert severity="warning">
+                        <ns-icon name="check" nsAlertIcon></ns-icon>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer malesuada. Donec ipsum massa, ullamcorper in,
+                        auctor et, scelerisque sed, est. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                        ridiculus mus. Integer tempor. Suspendisse nisl. Curabitur vitae diam non enim vestibulum interdum. Sed elit
+                        dui, pellentesque a, faucibus vel, interdum nec, diam. Aenean id metus id velit ullamcorper pulvinar. Itaque
+                        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+                        perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                        quaerat voluptatem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur bibendum justo non
+                        orci.
+                        <button mat-stroked-button nsAlertAction>Action</button>
+                    </ns-alert>
+
+                    <ns-alert severity="error">
+                        <ns-icon name="check" nsAlertIcon></ns-icon>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer malesuada. Donec ipsum massa, ullamcorper in,
+                        auctor et, scelerisque sed, est. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                        ridiculus mus. Integer tempor. Suspendisse nisl. Curabitur vitae diam non enim vestibulum interdum. Sed elit
+                        dui, pellentesque a, faucibus vel, interdum nec, diam. Aenean id metus id velit ullamcorper pulvinar. Itaque
+                        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+                        perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                        quaerat voluptatem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur bibendum justo non
+                        orci.
+                        <button mat-stroked-button nsAlertAction>Action</button>
+                    </ns-alert>
+
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 
     <div class="row mt-5">
         <div class="col-xxl-6">
@@ -9,63 +78,6 @@
         </div>
         <div class="col-xxl-6">
             <markdown [data]="markdownHtml"></markdown>
-        </div>
-    </div>
-
-    <div class="row py-3">
-        <div class="flex flex-col gap-3 d-flex flex-column">
-
-            <ns-alert severity="neutral">
-                Some short message
-            </ns-alert>
-
-            <ns-alert severity="info">
-                <mat-icon nsAlertIcon>check</mat-icon>
-                Some short message
-                <button mat-icon-button nsSmallButton nsStrokedButton nsAlertAction>
-                    <ns-icon name="ns-close" />
-                </button>
-            </ns-alert>
-
-            <ns-alert severity="success">
-                <ns-icon name="check" nsAlertIcon></ns-icon>
-                <div class="ns-font-title">Alert Title</div>
-                Some short message
-                <button mat-stroked-button nsAlertAction>Action</button>
-                <button mat-icon-button nsStrokedButton nsAlertAction>
-                    <ns-icon name="ns-more-actions" />
-                </button>
-            </ns-alert>
-
-
-            <ns-alert severity="warning">
-                <ns-icon name="check" nsAlertIcon></ns-icon>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer malesuada. Donec ipsum massa, ullamcorper in,
-                auctor et, scelerisque sed, est. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Integer tempor. Suspendisse nisl. Curabitur vitae diam non enim vestibulum interdum. Sed elit
-                dui, pellentesque a, faucibus vel, interdum nec, diam. Aenean id metus id velit ullamcorper pulvinar. Itaque
-                earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
-                perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
-                quaerat voluptatem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur bibendum justo non
-                orci.
-                <button mat-stroked-button nsAlertAction>Action</button>
-            </ns-alert>
-
-            <ns-alert severity="error">
-                <ns-icon name="check" nsAlertIcon></ns-icon>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer malesuada. Donec ipsum massa, ullamcorper in,
-                auctor et, scelerisque sed, est. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Integer tempor. Suspendisse nisl. Curabitur vitae diam non enim vestibulum interdum. Sed elit
-                dui, pellentesque a, faucibus vel, interdum nec, diam. Aenean id metus id velit ullamcorper pulvinar. Itaque
-                earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
-                perferendis doloribus asperiores repellat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
-                quaerat voluptatem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur bibendum justo non
-                orci.
-                <button mat-stroked-button nsAlertAction>Action</button>
-            </ns-alert>
-
         </div>
     </div>
 </div>

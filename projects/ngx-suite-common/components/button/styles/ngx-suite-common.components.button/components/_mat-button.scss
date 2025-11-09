@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'mixins';
 @use 'ngx-suite-common.components.icon/mixins' as iconMixins;
 
 :root {
@@ -240,7 +241,7 @@ a {
         border-width: var(--ns-mat-icon-button-outline-size);
 
         > .mat-icon {
-            @include iconMixins.ns-mat-icon-size(var(--ns-mat-button-icon-size));
+            @include mixins.ns-mat-icon-size(var(--ns-mat-button-icon-size));
             vertical-align: top;
         }
 

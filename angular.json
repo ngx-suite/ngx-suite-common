@@ -84,7 +84,8 @@
                                 "projects/ngx-suite-common/utils/material/styles",
                                 "projects/ngx-suite-common/utils/date/styles"
                             ]
-                        }
+                        },
+                        "externalDependencies": ["assets/*"]
                     },
                     "configurations": {
                         "production": {

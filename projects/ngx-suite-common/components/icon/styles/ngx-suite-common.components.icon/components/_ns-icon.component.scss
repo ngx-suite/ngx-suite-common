@@ -1,4 +1,5 @@
-@use '../mixins';
+@use '../mixins' as iconMixins;
+@use 'mixins';
 
 ns-icon {
     @include mixins.ns-mat-icon-size();
@@ -13,5 +14,5 @@ ns-icon {
 
 
 .ns-font-icon-small {
-    @include mixins.ns-icon-self-size(var(--ns-font-size-icon--small));
+    @include iconMixins.ns-icon-self-size(var(--ns-font-size-icon--small));
 }

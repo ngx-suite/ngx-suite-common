@@ -1,0 +1,15 @@
+@use 'mixins';
+
+.mat-mdc-nav-list {
+    --mat-list-active-indicator-color: var(--ns-color-primary-50);
+    --mat-list-active-indicator-shape: var(--ns-border-radius--md);
+    --mat-list-list-item-focus-state-layer-color: var(--ns-color-primary-50);
+
+    .mat-mdc-list-item.mdc-list-item--activated {
+        --mat-list-list-item-label-text-color: var(--ns-color-primary-300);
+        --mat-list-list-item-ripple-color: var(--ns-color-primary-300);
+        color: var(--ns-color-primary-300);
+    }
+}
+
+

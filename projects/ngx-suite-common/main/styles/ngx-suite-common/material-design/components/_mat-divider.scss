@@ -1,12 +1,11 @@
-@import 'vars';
-@import 'mixins';
+@use 'mixins';
 
 mat-divider.mat-divider {
-    --mat-menu-divider-color: #{$color-neutral-40};
+    --mat-menu-divider-color: var(--ns-color-neutral-40);
 }
 
 .mat-divider.mat-divider-vertical {
-    --mat-menu-divider-color: #{$color-neutral-40};
+    --mat-menu-divider-color: var(--ns-color-neutral-40);
     display: inline-block;
     height: 24px;
     vertical-align: top;

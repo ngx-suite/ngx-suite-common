@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+@use 'sass:color';
+
+@use '../mixins';
+
+mat-chip-option.mat-mdc-standard-chip {
+    .mat-mdc-chip-action-label {
+        > ns-icon {
+            @include mixins.ns-icon-self-size(var(--ns-chips-icon-size));
+        }
+    }
+
+    .mat-mdc-chip-trailing-icon {
+        > ns-icon {
+            @include mixins.ns-icon-self-size(var(--ns-chips-icon-size--small));
+        }
+    }
+}

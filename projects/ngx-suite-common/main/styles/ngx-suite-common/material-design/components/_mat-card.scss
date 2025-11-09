@@ -1,16 +1,16 @@
 @use '@angular/material' as mat;
-@import 'vars';
-@import 'mixins';
+
+@use 'mixins';
 
 :root {
     @include mat.card-overrides((
-        outlined-container-shape: 8px,
-        elevated-container-shape: 8px,
-        title-text-size: $font-size--title-lg,
+        outlined-container-shape: var(--ns-border-radius--lg),
+        elevated-container-shape: var(--ns-border-radius--lg),
+        title-text-size: var(--ns-font-size--title-lg),
         title-text-weight: 500,
         title-text-line-height: 28px,
-        subtitle-text-color: $color-neutral-300,
-        subtitle-text-size: $font-size--body,
+        subtitle-text-color: var(--ns-color-neutral-300),
+        subtitle-text-size: var(--ns-font-size--body),
         subtitle-text-weight: 400,
         subtitle-text-line-height: 20px,
     ));

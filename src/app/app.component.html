@@ -12,6 +12,7 @@
             @for (tab of tabs; track tab) {
                 <a #link="routerLinkActive"
                    [class.mdc-list-item--activated]="link.isActive"
+                   class="p-2 px-3 my-1"
                    mat-list-item
                    routerLinkActive
                    routerLink="{{tab.route}}"
@@ -22,7 +23,7 @@
         </mat-nav-list>
     </mat-drawer>
 
-    <mat-drawer-content class="p-5 pt-0">
+    <mat-drawer-content class="p-3 pt-0">
         <router-outlet />
     </mat-drawer-content>
 </mat-drawer-container>

@@ -1,8 +1,8 @@
-@import 'vars';
+
 
 .cdk-overlay-backdrop {
     backdrop-filter: blur(2px);
-    background-color: $color-neutral-0--opacity-50 !important;
+    background-color: var(--ns-color-neutral-0--opacity-50) !important;
 }
 
 .cdk-overlay-transparent-backdrop {

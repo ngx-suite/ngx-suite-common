@@ -1,29 +1,3 @@
-<div class="row mt-3">
-    <div class="col-xxl-8 offset-xxl-2">
-        <div class="ns-font-body-xl text-justify">
-            <p>
-                Custom directives are used to style standard MatButton.
-                On top of standard
-                <code>mat-button, mat-stroked-button mat-flat-button</code> and <code>mat-icon-button</code> directives, there are
-                <b>custom directives</b> that can be used in combination with the standard mat-button directives:
-            </p>
-            <ul>
-                <li><code>[mat-button][nsButtonSize],</code></li>
-                <li><code>[mat-button][nsButtonStyle],</code></li>
-                <li><code>[mat-button][color].</code></li>
-            </ul>
-            <p>
-                In addition, there is also custom directive <code>[nsFlatButton], [nsStrokedButton]</code>
-                that can be used instead of generic <code>[nsButtonStyle]</code> to defined the particular style:
-            </p>
-            <ul>
-                <li><code>[mat-button][nsFlatButton]</code></li>
-                <li><code>[mat-button][nsStrokedButton]</code></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
 <mat-card class="mt-5">
     <mat-card-header>
         <div mat-card-title>
@@ -32,7 +6,7 @@
     </mat-card-header>
     <mat-card-content class="pt-3">
         <div class="ns-bg-color-neutral-10 ns-border-radius--lg p-2 mb-3">
-            <div class="d-flex gap-3 justify-content-between flex-wrap p-2 overflow-auto">
+            <div class="d-flex gap-5 flex-wrap p-2 overflow-auto">
                 <div>
                     <div class="ns-font-title ns-color-neutral-90 mb-2">Button Size</div>
                     <mat-button-toggle-group [(value)]="buttonSize">
@@ -147,13 +121,33 @@
 </mat-card>
 
 <div class="row mt-5">
-    <div class="col-xxl-6">
-        <markdown [data]="markdownButtonEnums"></markdown>
-    </div>
-    <div class="col-xxl-6">
-        <markdown [data]="markdownButtonCombination"></markdown>
+    <div class="col">
+        <div class="text-justify">
+            <p class="ns-font-body-xl pb-5">
+                Custom directives are used to style standard MatButton.
+                On top of standard
+                <code>mat-button, mat-stroked-button mat-flat-button</code> and <code>mat-icon-button</code> directives, there are
+                <b>custom directives</b> that can be used in combination with the standard mat-button directives:
+            </p>
+            <markdown [data]="markdownButtonEnums"></markdown>
+            <markdown [data]="markdownButtonDirectives"></markdown>
+            <p class="ns-font-body-xl py-5">
+                In addition, there is also custom directive <code>[nsFlatButton], [nsStrokedButton]</code>
+                that can be used instead of generic <code>[nsButtonStyle]</code> to defined the particular style:
+            </p>
+            <markdown [data]="markdownButtonCombination"></markdown>
+        </div>
     </div>
 </div>
+
+<!--<div class="row mt-5">-->
+<!--    <div class="col-xxl-6">-->
+<!--        <markdown [data]="markdownButtonEnums"></markdown>-->
+<!--    </div>-->
+<!--    <div class="col-xxl-6">-->
+<!--        <markdown [data]="markdownButtonCombination"></markdown>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 

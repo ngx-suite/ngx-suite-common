@@ -1,37 +1,44 @@
-@import 'vars';
-@import 'mixins';
-
-$nav-item-text-color: $color-neutral-900;
-$nav-item-text-color--active: $color-primary-300;
-$nav-item-bg--hover: $color-neutral-20;
-$nav-item-bg--active: $color-primary-50;
-
+@use 'mixins';
 
 .mat-mdc-tab-nav-bar {
-    .mat-mdc-tab-link.mdc-tab {
-        @include krm-icon-component-color($color-neutral-300);
+    // text
+    --mat-tab-nav-text-color: var(--ns-color-neutral-900);
+    --mat-tab-nav-text-color--active: var(--ns-color-primary-300);
+    // bg
+    --mat-tab-nav-bg--hover: var(--ns-color-neutral-20);
+    --mat-tab-nav-bg--active: var(--ns-color-primary-50);
+    // icon
+    --mat-tab-nav-icon-color: var(--ns-color-neutral-300);
+    --mat-tab-nav-icon-color--active: var(--ns-color-primary-300);
 
-        --mat-tab-header-inactive-label-text-color: #{$nav-item-text-color};
-        --mat-tab-header-active-label-text-color: #{$nav-item-text-color--active};
+    .mat-mdc-tab-link.mdc-tab {
+        --mat-tab-header-inactive-label-text-color: var(--mat-tab-nav-text-color);
+        --mat-tab-header-active-label-text-color: var(--mat-tab-nav-text-color--active);
         border-radius: 8px 8px 0 0;
-        color: $nav-item-text-color;
+        color: var(--mat-tab-nav-text-color);
         height: 40px;
         min-width: 0;
         opacity: 1;
         text-decoration: none;
 
+        .mat-icon {
+            color: var(--mat-tab-nav-icon-color);
+        }
+
         &.mdc-tab-indicator--active.mdc-tab--active {
-            color: $nav-item-text-color--active;
+            color: var(--mat-tab-nav-text-color--active);
 
             .mdc-tab__text-label {
-                color: $nav-item-text-color--active;
+                color: var(--mat-tab-nav-text-color--active);
             }
 
-            @include krm-icon-component-color($nav-item-text-color--active);
+            .mat-icon {
+                color: var(--mat-tab-nav-icon-color--active);
+            }
         }
 
         &:hover:not(.mdc-tab-indicator--active) {
-            background-color: $nav-item-bg--hover;
+            background-color: var(--mat-tab-nav-bg--hover);
         }
 
         &:not(.mdc-tab-indicator--active) {
@@ -61,7 +68,7 @@ $nav-item-bg--active: $color-primary-50;
         }
 
         .mdc-tab-indicator--active {
-            background-color: $nav-item-bg--active;
+            background-color: var(--mat-tab-nav-bg--active);
         }
     }
 }

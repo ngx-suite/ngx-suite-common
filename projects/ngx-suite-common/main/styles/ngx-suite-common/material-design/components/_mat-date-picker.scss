@@ -1,14 +1,14 @@
 @use '@angular/material' as mat;
-@import 'vars';
+
 
 
 :root {
     @include mat.datepicker-overrides((
         calendar-container-shape: 8px,
-        calendar-container-elevation-shadow: $shadow-hover,
-        calendar-date-preview-state-outline-color: $color-neutral-40,
+        calendar-container-elevation-shadow: var(--ns-shadow-hover),
+        calendar-date-preview-state-outline-color: var(--ns-color-neutral-40),
         calendar-text-size: 12px,
-        calendar-date-text-color:  $color-neutral-900,
+        calendar-date-text-color:  var(--ns-color-neutral-900),
     ));
 }
 

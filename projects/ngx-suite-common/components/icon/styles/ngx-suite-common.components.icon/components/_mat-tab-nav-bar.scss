@@ -1,0 +1,13 @@
+@use '../mixins' as iconMixins;
+
+.mat-mdc-tab-nav-bar {
+    .mat-mdc-tab-link.mdc-tab {
+        @include iconMixins.ns-icon-color(var(--mat-tab-nav-icon-color));
+
+        &.mdc-tab-indicator--active.mdc-tab--active {
+            @include iconMixins.ns-icon-color(var(--mat-tab-nav-icon-color--active));
+        }
+    }
+}
+
+

@@ -1,0 +1,11 @@
+@mixin ns-mat-icon-size($size: var(--ns-font-size-icon)) {
+    font-size: $size;
+    height: $size;
+    line-height: $size;
+    width: $size;
+
+    svg {
+        height: $size;
+        width: $size;
+    }
+}

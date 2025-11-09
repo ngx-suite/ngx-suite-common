@@ -1,18 +1,17 @@
-@import 'vars';
-@import 'mixins';
+@use 'mixins';
 
 .mat-calendar {
-    --mat-datepicker-calendar-header-text-color: #{$color-neutral-60};
-    --mat-datepicker-calendar-date-selected-state-background-color: #{$color-primary-300};
-    --mat-datepicker-toggle-active-state-icon-color: #{$color-primary-300};
-    --mat-datepicker-calendar-date-selected-disabled-state-background-color: #{$color-primary-400};
-    --mat-datepicker-calendar-date-focus-state-background-color: #{$color-primary-50};
-    --mat-datepicker-calendar-date-hover-state-background-color: #{$color-primary-50};
-    --mat-datepicker-calendar-date-in-range-state-background-color: #{$color-primary-50};
-    --mat-datepicker-calendar-header-divider-color: #{$color-neutral-40};
-    --mat-datepicker-calendar-date-today-outline-color: #{$color-neutral-40};
-    --mat-datepicker-calendar-date-text-color: #{$color-neutral-900};
-    --mat-datepicker-calendar-period-button-icon-color: #{$color-neutral-60};
+    --mat-datepicker-calendar-header-text-color: var(--ns-color-neutral-60);
+    --mat-datepicker-calendar-date-selected-state-background-color: var(--ns-color-primary-300);
+    --mat-datepicker-toggle-active-state-icon-color: var(--ns-color-primary-300);
+    --mat-datepicker-calendar-date-selected-disabled-state-background-color: var(--ns-color-primary-400);
+    --mat-datepicker-calendar-date-focus-state-background-color: var(--ns-color-primary-50);
+    --mat-datepicker-calendar-date-hover-state-background-color: var(--ns-color-primary-50);
+    --mat-datepicker-calendar-date-in-range-state-background-color: var(--ns-color-primary-50);
+    --mat-datepicker-calendar-header-divider-color: var(--ns-color-neutral-40);
+    --mat-datepicker-calendar-date-today-outline-color: var(--ns-color-neutral-40);
+    --mat-datepicker-calendar-date-text-color: var(--ns-color-neutral-900);
+    --mat-datepicker-calendar-period-button-icon-color: var(--ns-color-neutral-60);
     width: 280px;
 
     .mat-calendar-body-cell {
@@ -30,7 +29,7 @@
     }
 
     .mat-calendar-table-header th {
-        @include krm-font-label();
+        @include mixins.ns-font-label();
     }
 
     .mat-calendar-arrow {

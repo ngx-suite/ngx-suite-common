@@ -61,45 +61,58 @@ class MyComponent {
 `
     }
 
-    get markdownButtonCombination(): string {
+    get markdownButtonDirectives(): string {
         return `\`\`\`html
 <!-- Mat Button -->
-<button [nsButtonSize]="buttonSize"   
-        [nsButtonStyle]="buttonStyle"
-        [color]="buttonColor"
-        mat-button>
-    Default
-</button>
-
-<!-- Mat Button Directive & nsButtonSize -->
-<button [nsButtonSize]="buttonSize"
-        [color]="buttonColor"
-        mat-flat-button>
-    Default
-</button>
-
-<!-- Mat Button Directive & nsFlatButton & nsStrokedButton -->
-<button [color]="buttonColor"
-        mat-button
-        nsFlatButton>
-    Default
+<button mat-button [nsButtonSize]="buttonSize" [nsButtonStyle]="buttonStyle" [color]="buttonColor">
+    Label
 </button>
 
 <!-- Mat Icon Button -->
-<button [nsButtonSize]="buttonSize"
-        [nsButtonStyle]="buttonStyle"
-        [color]="buttonColor"
-        mat-icon-button>
-    <ns-icon name="ns-copy"/>
-</button>\`
-
-<!-- Mat Icon Button & nsFlatButton -->
-<button [nsButtonSize]="buttonSize"        
-        [color]="buttonColor"
-        nsFlatButton
-        mat-icon-button>
+<button mat-icon-button [nsButtonSize]="buttonSize" [nsButtonStyle]="buttonStyle" [color]="buttonColor">
     <ns-icon name="ns-copy"/>
 </button>`
+
+    }
+
+
+    get markdownButtonCombination(): string {
+        return `\`\`\`html
+<!-- Mat Button :: nsFlatButton -->
+<button mat-button nsFlatButton>
+    Label
+</button>
+
+<!-- Mat Button :: nsStrokedButton -->
+<button mat-button nsStrokedButton>
+    Label
+</button>
+
+<!-- Mat Button :: nsFlatButton & nsSmallButton -->
+<button mat-button nsFlatButton nsSmallButton>
+    Label
+</button>
+
+<!-- Mat Button :: nsSmallButton -->
+<button mat-button nsSmallButton>
+    Label
+</button>
+
+<!-- Mat Icon Button :: nsFlatButton -->
+<button mat-icon-button nsFlatButton>
+    <ns-icon name="ns-copy"/>
+</button>
+
+<!-- Mat Icon Button :: nsSmallButton -->
+<button mat-icon-button nsSmallButton>
+    <ns-icon name="ns-copy"/>
+</button>
+
+<!-- Mat Icon Button :: nsFlatButton & nsSmallButton -->
+<button mat-icon-button nsFlatButton nsSmallButton>
+    <ns-icon name="ns-copy"/>
+</button>`
+
     }
 
 }

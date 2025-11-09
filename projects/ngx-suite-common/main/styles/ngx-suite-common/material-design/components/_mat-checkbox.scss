@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
-@import 'vars';
-@import 'mixins';
+
+@use 'mixins';
 
 $_checkbox-size: 16px;
 $checkbox-container-size: 32px;
@@ -8,11 +8,11 @@ $checkbox-container-size: 32px;
 :root {
     @include mat.checkbox-overrides((
         state-layer-size: $checkbox-container-size,
-        unselected-icon-color: $color-neutral-60,
-        unselected-focus-icon-color: $color-neutral-60,
-        unselected-hover-icon-color: $color-neutral-60,
-        disabled-unselected-icon-color: $color-neutral-40,
-        disabled-selected-icon-color: $color-neutral-40,
+        unselected-icon-color: var(--ns-color-neutral-60),
+        unselected-focus-icon-color: var(--ns-color-neutral-60),
+        unselected-hover-icon-color: var(--ns-color-neutral-60),
+        disabled-unselected-icon-color: var(--ns-color-neutral-40),
+        disabled-selected-icon-color: var(--ns-color-neutral-40),
     ));
 }
 
@@ -25,7 +25,7 @@ $checkbox-container-size: 32px;
 }
 
 .mat-mdc-checkbox.mat-primary {
-    --mdc-checkbox-selected-checkmark-color: #{$color-neutral-0};
+    --mdc-checkbox-selected-checkmark-color: var(--ns-color-neutral-0);
 }
 
 .mat-mdc-checkbox {

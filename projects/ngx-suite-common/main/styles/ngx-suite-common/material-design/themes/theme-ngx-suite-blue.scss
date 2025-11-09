@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+@use '../palletes/theme-colors-blue' as themeColors;
+
+html {
+    color-scheme: light;
+
+    @include mat.theme((
+        color: themeColors.$primary-palette,
+        typography: var(--ns-font-family--body)
+    ),
+    $overrides: (
+        surface: var(--ns-color-neutral-0),
+        surface-container: var(--ns-color-neutral-0),
+        surface-container-high: var(--ns-color-neutral-0),
+        surface-container-highest: var(--ns-color-neutral-0),
+        surface-container-low: var(--ns-color-neutral-0),
+        surface-container-lowest: var(--ns-color-neutral-0),
+        outline: var(--ns-color-neutral-40),
+        outline-variant: var(--ns-color-neutral-40),
+        background: var(--ns-color-neutral-0),
+    ));
+}
+
+:root {
+    --mat-sys-body-medium-size: var(--ns-font-size--body-lg);
+    --mat-sys-body-medium-line-height: 24px;
+    --mat-sys-body-medium-tracking: 0;
+    --mat-sys-body-large-line-size: var(--ns-font-size--body-lg);
+    --mat-sys-body-large-line-height: 24px;
+    --mat-sys-body-large-tracking: 0;
+    --mat-sys-primary-container: var(--ns-color-neutral-0);
+    --mdc-theme-text-primary-on-background: var(--ns-color-neutral-900);
+}

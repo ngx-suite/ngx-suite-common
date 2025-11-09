@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core'
+import { Directive, ElementRef, inject } from '@angular/core'
 
 import { NsButton } from '../models'
 
@@ -9,7 +9,9 @@ import { NsButton } from '../models'
 })
 export class NsButtonStyleDirective {
 
-    constructor(private readonly elementRef: ElementRef<HTMLElement>) {
+    private readonly elementRef = inject<ElementRef<HTMLElement>>(ElementRef)
+
+    constructor() {
         this.processButtonAttributes()
     }
 

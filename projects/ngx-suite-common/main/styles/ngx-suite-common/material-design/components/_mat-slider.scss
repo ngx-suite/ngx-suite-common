@@ -1,5 +1,4 @@
 @use '@angular/material' as mat;
-@import 'vars';
 
 
 :root {
@@ -7,6 +6,6 @@
         inactive-track-height: 8px,
         active-track-height: 8px,
         active-track-shape: 4px,
-        inactive-track-color: $color-neutral-40,
+        inactive-track-color: var(--ns-color-neutral-40),
     ));
 }
