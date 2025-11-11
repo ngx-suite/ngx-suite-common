@@ -68,6 +68,10 @@
     @include mixins.ns-font-overline();
 }
 
+.ns-font-code {
+    font-family: var(--ns-font-family-code), monospace;
+}
+
 .text-justify {
     text-align: justify !important;
 }

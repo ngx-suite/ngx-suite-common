@@ -33,6 +33,11 @@
                             },
                             {
                                 "glob": "**/*",
+                                "input": "projects/ngx-suite-common/main/assets",
+                                "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
                                 "input": "projects/ngx-suite-common/components/alert/assets",
                                 "output": "/assets"
                             },

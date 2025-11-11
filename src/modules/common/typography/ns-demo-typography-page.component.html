@@ -1,0 +1,55 @@
+<div class="container py-5">
+    <h1 class="ns-font-display-lg mb-5 text-center">
+        Typography
+    </h1>
+    <div class="container">
+        <mat-card>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-xl-6 d-flex flex-column gap-3">
+                        <div class="ns-font-display-lg">Display lg</div>
+                        <div class="ns-font-display">Display</div>
+                        <div class="ns-font-display-sm">Display sm</div>
+
+                        <div class="ns-font-headline-lg">Headline lg</div>
+                        <div class="ns-font-headline">Headline</div>
+                        <div class="ns-font-headline-sm">Headline sm</div>
+
+                        <div class="ns-font-title-lg">Title lg</div>
+                        <div class="ns-font-title">Title</div>
+                        <div class="ns-font-title-sm">Title sm</div>
+
+                        <div class="ns-font-label-lg">Label lg</div>
+                        <div class="ns-font-label">Label</div>
+                        <div class="ns-font-label-sm">Label sm</div>
+
+                        <div class="ns-font-body-xl">Body xl</div>
+                        <div class="ns-font-body-lg">Body lg</div>
+                        <div class="ns-font-body">Body</div>
+                        <div class="ns-font-body-sm">Body sm</div>
+                    </div>
+                    <div class="col-xl-6 pt-3 pt-xl-0">
+                        <markdown class="align-self-center" [data]="markdownCssVarsData"></markdown>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <div class="ns-font-body-xl py-5">
+            The library offers <b>CSS classes helpers</b> in format <code>.ns-font-[FONT_NAME]</code>, e.g.: <code>.ns-font-body</code>,
+            <code>.ns-font-body-lg</code>, etc. that can be used directly in the HTML. On top of that, there are also <b>mixins</b> that can be
+            used in SCSS:
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-xl-6">
+                <markdown class="align-self-center" [data]="markdownData"></markdown>
+            </div>
+            <div class="col-xl-6">
+                <markdown class="align-self-center" [data]="markdownMixinsData"></markdown>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

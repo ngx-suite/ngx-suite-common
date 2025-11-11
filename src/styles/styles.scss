@@ -8,19 +8,6 @@
 @use 'ngx-suite-common.components.icon' as icon;
 @use 'ngx-suite-common.components.alert' as alert;
 @use 'ngx-suite-common.components.button' as button;
-@use '@angular/material' as mat;
 @use './app';
-
-
-:root {
-    @include mat.sidenav-overrides((
-        container-width: 320px,
-        container-divider-color: var(--ns-color-neutral-40),
-    ));
-}
-
-body {
-    background-image: var(--body-bg-gradient);
-}
 
 

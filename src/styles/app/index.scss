@@ -1,2 +1,25 @@
+@use '@angular/material' as mat;
+
 @forward './app.component';
 @forward './markdown';
+
+@import 'ngx-suite-common/fonts/source-code-pro';
+
+:root {
+    @include mat.sidenav-overrides((
+        container-width: 320px,
+        container-divider-color: var(--ns-color-neutral-40),
+    ));
+}
+
+body {
+    background-image: var(--body-bg-gradient);
+}
+
+code {
+    background-color: var(--ns-color-neutral-20);
+    border-radius: var(--ns-border-radius--sm);
+    //font-family: var(--ns-font-family--code), monospace;
+    font-family: 'Source Code Pro', monospace;
+    padding: 0.25rem 0.5rem;
+}

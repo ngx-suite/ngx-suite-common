@@ -1,0 +1,26 @@
+$assets-path: 'assets/fonts';
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-regular.eot?#iefix') format('embedded-opentype'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-regular.woff2') format('woff2'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-regular.woff') format('woff'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-regular.ttf') format('truetype'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-regular.svg#SourceCodePro') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-500.eot?#iefix') format('embedded-opentype'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-500.woff2') format('woff2'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-500.woff') format('woff'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-500.ttf') format('truetype'),
+        url('#{$assets-path}/source-code-pro/source-code-pro-v21-latin-500.svg#SourceCodePro') format('svg'); /* Legacy iOS */
+}
+

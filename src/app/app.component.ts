@@ -6,6 +6,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
 
 @Component({
     selector: 'app-root',
+    templateUrl: './app.component.html',
     imports: [
         RouterOutlet,
         MatDrawerContainer,
@@ -16,12 +17,20 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
         RouterLink,
         RouterLinkActive,
     ],
-    templateUrl: './app.component.html',
 })
 export class AppComponent {
 
-
     readonly tabs = [
+        {
+            category: 'Common',
+        },
+        {
+            label: 'Typography',
+            route: '/common/typography',
+        },
+        {
+            category: 'Components',
+        },
         {
             label: 'Alert',
             route: '/components/alert',

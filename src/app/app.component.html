@@ -9,16 +9,24 @@
             NGX Suite
         </h1>
         <mat-nav-list>
+
             @for (tab of tabs; track tab) {
-                <a #link="routerLinkActive"
-                   [class.mdc-list-item--activated]="link.isActive"
-                   class="p-2 px-3 my-1"
-                   mat-list-item
-                   routerLinkActive
-                   routerLink="{{tab.route}}"
-                >
-                    {{ tab.label }}
-                </a>
+                @if (!!tab.category) {
+                    <div class="ns-font-overline ns-color-neutral-90 text-uppercase mb-2 ps-3 pt-3">
+                        {{ tab.category }}
+                    </div>
+                }
+                @else {
+                    <a #link="routerLinkActive"
+                       [class.mdc-list-item--activated]="link.isActive"
+                       class="p-2 px-3 my-1"
+                       mat-list-item
+                       routerLinkActive
+                       routerLink="{{tab.route}}"
+                    >
+                        {{ tab.label }}
+                    </a>
+                }
             }
         </mat-nav-list>
     </mat-drawer>
