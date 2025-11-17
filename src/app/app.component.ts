@@ -39,6 +39,10 @@ export class AppComponent {
             label: 'Button',
             route: '/components/button',
         },
+        {
+            label: 'Loader',
+            route: '/components/loader',
+        },
     ]
 
 }

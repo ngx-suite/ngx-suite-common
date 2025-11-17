@@ -251,7 +251,7 @@ describe('NsButtonDirective', () => {
 describe('NsButtonDirective :: Selector variants', () => {
     it('should work with mat-flat-button', async () => {
         @Component({
-            template: '<button mat-flat-button [nsButtonSize]="size"></button>',
+            template: '<button mat-flat-button [nsButtonSize]="size">Test</button>',
             imports: [NsButtonDirective, MatButtonModule],
         })
         class FlatButtonTestComponent {
@@ -273,7 +273,7 @@ describe('NsButtonDirective :: Selector variants', () => {
 
     it('should work with mat-stroked-button', async () => {
         @Component({
-            template: '<button mat-stroked-button [nsButtonSize]="size"></button>',
+            template: '<button mat-stroked-button [nsButtonSize]="size">Test</button>',
             imports: [NsButtonDirective, MatButtonModule],
         })
         class StrokedButtonTestComponent {
@@ -295,7 +295,7 @@ describe('NsButtonDirective :: Selector variants', () => {
 
     it('should work with mat-icon-button', async () => {
         @Component({
-            template: '<button mat-icon-button [nsButtonSize]="size"></button>',
+            template: '<button mat-icon-button [nsButtonSize]="size">Test</button>',
             imports: [NsButtonDirective, MatButtonModule],
         })
         class IconButtonTestComponent {

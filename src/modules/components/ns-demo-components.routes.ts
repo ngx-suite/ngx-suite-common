@@ -2,6 +2,7 @@ import { Routes } from '@angular/router'
 
 import { NsDemoAlertPageComponent } from './alert'
 import { NsDemoButtonPageComponent } from './button'
+import { NsDemoLoaderPageComponent } from './loader'
 
 
 export const routes: Routes = [
@@ -12,6 +13,10 @@ export const routes: Routes = [
     {
         path: 'button',
         component: NsDemoButtonPageComponent,
+    },
+    {
+        path: 'loader',
+        component: NsDemoLoaderPageComponent,
     },
     {
         path: '',

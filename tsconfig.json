@@ -43,6 +43,9 @@
             ],
             "@ngx-suite/common/utils/date": [
                 "projects/ngx-suite-common/utils/date/src/public-api"
+            ],
+            "@ngx-suite/common/components/loader": [
+                "projects/ngx-suite-common/components/loader/src/public-api"
             ]
         }
     },
