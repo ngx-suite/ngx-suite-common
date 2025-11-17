@@ -47,17 +47,17 @@ describe('NsButtonDirective', () => {
     })
 
     describe('Initialization', () => {
-        it('should create the directive', () => {
+        test('should create the directive', () => {
             const directive = buttonDebugElement.injector.get(NsButtonDirective)
             expect(directive).toBeTruthy()
         })
 
-        it('should add base class name on initialization', () => {
+        test('should add base class name on initialization', () => {
             fixture.detectChanges()
             expect(buttonElement.classList.contains(NsButton.BASE_CLASS_NAME)).toBe(true)
         })
 
-        it('should add base class name without inputs', () => {
+        test('should add base class name without inputs', () => {
             component.buttonSize = undefined
             component.buttonStyle = undefined
             fixture.detectChanges()
@@ -66,7 +66,7 @@ describe('NsButtonDirective', () => {
     })
 
     describe('Button Size', () => {
-        it('should add size class when nsButtonSize is set', () => {
+        test('should add size class when nsButtonSize is set', () => {
             const size = NsButton.ButtonSize.basic
             component.buttonSize = size
             fixture.detectChanges()
@@ -75,7 +75,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(cssClassName)).toBe(true)
         })
 
-        it('should handle all button size values', () => {
+        test('should handle all button size values', () => {
             for (const size of Object.values(NsButton.ButtonSize)) {
                 component.buttonSize = size
                 fixture.detectChanges()
@@ -85,7 +85,7 @@ describe('NsButtonDirective', () => {
             }
         })
 
-        it('should remove old size class when size changes', () => {
+        test('should remove old size class when size changes', () => {
             const oldSize = NsButton.ButtonSize.small
             const newSize = NsButton.ButtonSize.basic
 
@@ -103,7 +103,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(newCssClassName)).toBe(true)
         })
 
-        it('should not add size classes when nsButtonSize is undefined', () => {
+        test('should not add size classes when nsButtonSize is undefined', () => {
             component.buttonSize = undefined
             fixture.detectChanges()
 
@@ -115,7 +115,7 @@ describe('NsButtonDirective', () => {
     })
 
     describe('Button Style', () => {
-        it('should add style class when nsButtonStyle is set', () => {
+        test('should add style class when nsButtonStyle is set', () => {
             const style = NsButton.ButtonStyle.basic
             component.buttonStyle = style
             fixture.detectChanges()
@@ -124,7 +124,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(cssClassName)).toBe(true)
         })
 
-        it('should handle all button style values', () => {
+        test('should handle all button style values', () => {
             for (const style of Object.values(NsButton.ButtonStyle)) {
                 component.buttonStyle = style
                 fixture.detectChanges()
@@ -134,7 +134,7 @@ describe('NsButtonDirective', () => {
             }
         })
 
-        it('should remove old style class when style changes', () => {
+        test('should remove old style class when style changes', () => {
             const oldStyle = NsButton.ButtonStyle.basic
             const newStyle = NsButton.ButtonStyle.flat
 
@@ -152,7 +152,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(newCssClassName)).toBe(true)
         })
 
-        it('should not add style classes when nsButtonStyle is undefined', () => {
+        test('should not add style classes when nsButtonStyle is undefined', () => {
             component.buttonStyle = undefined
             fixture.detectChanges()
 
@@ -164,7 +164,7 @@ describe('NsButtonDirective', () => {
     })
 
     describe('Combined Size and Style', () => {
-        it('should apply both size and style classes', () => {
+        test('should apply both size and style classes', () => {
             const size = NsButton.ButtonSize.small
             const style = NsButton.ButtonStyle.stroked
 
@@ -180,7 +180,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(styleCssClassName)).toBe(true)
         })
 
-        it('should update both size and style independently', () => {
+        test('should update both size and style independently', () => {
             const size1 = NsButton.ButtonSize.small
             const style1 = NsButton.ButtonStyle.flat
 
@@ -210,7 +210,7 @@ describe('NsButtonDirective', () => {
     })
 
     describe('ngOnChanges', () => {
-        it('should process attributes when nsButtonSize changes', () => {
+        test('should process attributes when nsButtonSize changes', () => {
             component.buttonSize = NsButton.ButtonSize.small
             fixture.detectChanges()
 
@@ -222,7 +222,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(cssClassName)).toBe(true)
         })
 
-        it('should process attributes when nsButtonStyle changes', () => {
+        test('should process attributes when nsButtonStyle changes', () => {
             component.buttonStyle = NsButton.ButtonStyle.flat
             fixture.detectChanges()
 
@@ -234,7 +234,7 @@ describe('NsButtonDirective', () => {
             expect(buttonElement.classList.contains(cssClassName)).toBe(true)
         })
 
-        it('should not duplicate base class on changes', () => {
+        test('should not duplicate base class on changes', () => {
             component.buttonSize = NsButton.ButtonSize.basic
             fixture.detectChanges()
 
@@ -249,9 +249,9 @@ describe('NsButtonDirective', () => {
 })
 
 describe('NsButtonDirective :: Selector variants', () => {
-    it('should work with mat-flat-button', async () => {
+    test('should work with mat-flat-button', async () => {
         @Component({
-            template: '<button mat-flat-button [nsButtonSize]="size"></button>',
+            template: '<button mat-flat-button [nsButtonSize]="size">Test</button>',
             imports: [NsButtonDirective, MatButtonModule],
         })
         class FlatButtonTestComponent {
@@ -271,9 +271,9 @@ describe('NsButtonDirective :: Selector variants', () => {
         expect(flatButton).toBeTruthy()
     })
 
-    it('should work with mat-stroked-button', async () => {
+    test('should work with mat-stroked-button', async () => {
         @Component({
-            template: '<button mat-stroked-button [nsButtonSize]="size"></button>',
+            template: '<button mat-stroked-button [nsButtonSize]="size">Test</button>',
             imports: [NsButtonDirective, MatButtonModule],
         })
         class StrokedButtonTestComponent {
@@ -293,9 +293,9 @@ describe('NsButtonDirective :: Selector variants', () => {
         expect(strokedButton).toBeTruthy()
     })
 
-    it('should work with mat-icon-button', async () => {
+    test('should work with mat-icon-button', async () => {
         @Component({
-            template: '<button mat-icon-button [nsButtonSize]="size"></button>',
+            template: '<button mat-icon-button [nsButtonSize]="size">Test</button>',
             imports: [NsButtonDirective, MatButtonModule],
         })
         class IconButtonTestComponent {

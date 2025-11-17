@@ -1,0 +1,53 @@
+<div class="container py-5">
+    <h1 class="ns-font-display-lg mb-5 text-center">
+        Loader
+    </h1>
+    <mat-card class="mt-5">
+        <mat-card-header>
+            <div mat-card-title>
+                Loader Overview
+            </div>
+        </mat-card-header>
+        <mat-card-content class="pt-3 position-relative hv-50">
+            <div class="row">
+                <div class="col-xxl-6 d-flex flex-column gap-3">
+                    <div>
+                        <div class="ns-font-title mb-2 ns-color-neutral-300">Size</div>
+                        <mat-button-toggle-group [(value)]="loaderSize">
+                            <mat-button-toggle [value]="NsLoaderSize.small">Small</mat-button-toggle>
+                            <mat-button-toggle [value]="NsLoaderSize.medium">Medium</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div>
+                        <div class="ns-font-title mb-2 ns-color-neutral-300">Placement</div>
+                        <mat-button-toggle-group [(value)]="loaderPlacement">
+                            <mat-button-toggle [value]="NsLoaderPlacement.block">block</mat-button-toggle>
+                            <mat-button-toggle [value]="NsLoaderPlacement.inline">inline</mat-button-toggle>
+                            <mat-button-toggle [value]="NsLoaderPlacement.floating">floating</mat-button-toggle>
+                            <mat-button-toggle [value]="NsLoaderPlacement.cover">cover</mat-button-toggle>
+                            <mat-button-toggle [value]="NsLoaderPlacement.coverNoBackdrop">coverNoBackdrop</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div>
+                        <mat-form-field class="w-100">
+                            <mat-label>Loading Text</mat-label>
+                            <input matInput [(ngModel)]="loadingText">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-xxl-6 position-relative ns-bg-color-neutral-10 ns-border-radius--lg">
+                    <ns-loader [loadingText]="loadingText"
+                               [placement]="loaderPlacement"
+                               [size]="loaderSize"/>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="mt-5">
+        <markdown [data]="markdownEnums"/>
+    </div>
+</div>
+
+
+

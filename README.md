@@ -23,6 +23,8 @@ To **run the Demo App**, run: `npm run start`
 
 - Alert
 - Button
+- Icon
+- Loader
 
 ---
 

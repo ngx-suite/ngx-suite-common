@@ -26,7 +26,7 @@
     "-------------------------NGX-SUITE--DEVKIT-COMMANDS--------------------------": "",
     "ns::sync-angular-env": "ng g @ngx-suite/devkit:sync-ang-env --source-dir-path=projects/ngx-suite-common --parent-lib-alias=@ngx-suite/common",
     "ns::clean-up-ang-env": "ng g @ngx-suite/devkit:clean-up-ang-env --project-name=ngx-suite-common-demo",
-    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/utils/date --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
+    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/components/loader --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
   },
   "private": true,
   "dependencies": {
@@ -60,7 +60,6 @@
     "@types/lodash-es": "4.17.12",
     "@types/node": "18.19.67",
     "angular-eslint": "20.5.2",
-    "cypress": "14.3.3",
     "eslint": "9.16.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-prefer-arrow": "1.2.3",

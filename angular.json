@@ -60,6 +60,11 @@
                                 "glob": "**/*",
                                 "input": "projects/ngx-suite-common/utils/date/assets",
                                 "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/components/loader/assets",
+                                "output": "/assets"
                             }
                         ],
                         "styles": [
@@ -87,10 +92,13 @@
                                 "projects/ngx-suite-common/components/icon/styles",
                                 "projects/ngx-suite-common/components/button/styles",
                                 "projects/ngx-suite-common/utils/material/styles",
-                                "projects/ngx-suite-common/utils/date/styles"
+                                "projects/ngx-suite-common/utils/date/styles",
+                                "projects/ngx-suite-common/components/loader/styles"
                             ]
                         },
-                        "externalDependencies": ["assets/*"]
+                        "externalDependencies": [
+                            "assets/*"
+                        ]
                     },
                     "configurations": {
                         "production": {
