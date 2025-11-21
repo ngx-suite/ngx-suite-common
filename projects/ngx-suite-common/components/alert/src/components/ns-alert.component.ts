@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core'
 
-import { NsAlert } from '../models'
+import { NsAlertSeverity } from '../models'
 
 
 @Component({
@@ -17,8 +17,8 @@ import { NsAlert } from '../models'
 })
 export class NsAlertComponent {
 
-    readonly severity = input<NsAlert.Severity>(NsAlert.Severity.neutral)
+    readonly severity = input<NsAlertSeverity>(NsAlertSeverity.neutral)
 
-    readonly Severity = NsAlert.Severity
+    readonly Severity = NsAlertSeverity
 
 }

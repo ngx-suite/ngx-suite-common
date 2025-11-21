@@ -28,21 +28,18 @@ export class NsDemoAlertPageComponent {
 
     get markdownEnums(): string {
         return `\`\`\`typescript
-export namespace NsAlert {
-
-    export type Severity =
-        | 'neutral'
-        | 'info'
-        | 'success'
-        | 'error'
-        | 'warning'          
-}
+export type NsAlertSeverity =
+    | 'neutral'
+    | 'info'
+    | 'success'
+    | 'error'
+    | 'warning'          
 
 ...
 
 class MyComponent {
     // default values
-    alertSeverity: NsAlert.Severity = NsAlert.Severity.info
+    alertSeverity: NsAlertSeverity = NsAlertSeverity.info
 }
 
 `

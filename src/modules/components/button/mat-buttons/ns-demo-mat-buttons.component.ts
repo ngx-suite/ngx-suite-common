@@ -6,7 +6,7 @@ import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-
 import { MatCardModule } from '@angular/material/card'
 import { MatCheckbox } from '@angular/material/checkbox'
 import { MatIconModule } from '@angular/material/icon'
-import { NsButton, NsButtonDirective } from '@ngx-suite/common/components/button'
+import { NsButtonDirective, NsButtonSize, NsButtonStyle } from '@ngx-suite/common/components/button'
 import { NsExpandIconDirective, NsIconComponent } from '@ngx-suite/common/components/icon'
 import { NsObjValuesPipe } from '@ngx-suite/common/utils'
 import { MarkdownComponent } from 'ngx-markdown'
@@ -36,26 +36,25 @@ import { MarkdownComponent } from 'ngx-markdown'
 })
 export class NsDemoMatButtonsComponent {
 
-    readonly ButtonSize = NsButton.ButtonSize
-    readonly ButtonStyle = NsButton.ButtonStyle
+    readonly ButtonSize = NsButtonSize
+    readonly ButtonStyle = NsButtonStyle
 
-    buttonSize: NsButton.ButtonSize = NsButton.ButtonSize.basic
+    buttonSize: NsButtonSize = NsButtonSize.basic
     buttonDisabled = false
     buttonColor: 'primary' | 'accent' | 'warn' | null = null
 
     get markdownButtonEnums(): string {
         return `\`\`\`typescript
-namespace NsButton {
-    type ButtonStyle = 'basic' | 'flat' | 'stroked'
-    type ButtonSize = 'basic' | 'small'           
-}
+type NsButtonStyle = 'basic' | 'flat' | 'stroked'
+type NsButtonSize = 'basic' | 'small'           
+
 
 ...
 
 class MyComponent {
     // default values
-    buttonStyle: NsButton.ButtonStyle = NsButton.ButtonStyle.basic
-    buttonSize: NsButton.ButtonSize = NsButton.ButtonSize.basic
+    buttonStyle: NsButtonStyle = NsButtonStyle.basic
+    buttonSize: NsButtonSize = NsButtonSize.basic
     buttonColor: 'primary' | 'accent' | 'warn' | undefined = undefined
 }
 `

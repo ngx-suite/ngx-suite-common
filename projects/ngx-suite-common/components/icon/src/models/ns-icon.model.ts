@@ -60,6 +60,6 @@ export function toNsMatOutlinedIcon(iconName: string): string {
 
 export function extractIconName(iconAlias: string): string {
     return iconAlias.includes(NS_ICON_SUFFIX__SEPARATOR)
-        ? iconAlias.spltest(NS_ICON_SUFFIX__SEPARATOR)[0]
+        ? iconAlias.split(NS_ICON_SUFFIX__SEPARATOR)[0]
         : iconAlias
 }

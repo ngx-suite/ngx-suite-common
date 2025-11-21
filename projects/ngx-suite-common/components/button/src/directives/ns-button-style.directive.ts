@@ -1,6 +1,6 @@
 import { Directive, ElementRef, inject } from '@angular/core'
 
-import { NsButton } from '../models'
+import { NS_BUTTON_HOST_SELECTOR_TO_CLASS_MAP } from '../models'
 
 
 @Directive({
@@ -20,7 +20,7 @@ export class NsButtonStyleDirective {
     }
 
     private processButtonAttributes(): void {
-        for (const pair of NsButton.HOST_SELECTOR_TO_KRM_BUTTON_CLASS_MAP) {
+        for (const pair of NS_BUTTON_HOST_SELECTOR_TO_CLASS_MAP) {
             if (this.hasHostAttributes(pair.selector)) {
                 pair.cssClasses.forEach((className: string) => {
                     this.elementRef.nativeElement.classList.add(className)

@@ -1,18 +1,15 @@
-export namespace NsAlert {
+export type NsAlertSeverity =
+    | 'neutral'
+    | 'info'
+    | 'success'
+    | 'error'
+    | 'warning'
 
-    export type Severity =
-        | 'neutral'
-        | 'info'
-        | 'success'
-        | 'error'
-        | 'warning'
-
-    export const Severity = {
-        neutral: 'neutral' as Severity,
-        info: 'info' as Severity,
-        success: 'success' as Severity,
-        error: 'error' as Severity,
-        warning: 'warning' as Severity,
-    }
-
+export const NsAlertSeverity = {
+    neutral: 'neutral' as NsAlertSeverity,
+    info: 'info' as NsAlertSeverity,
+    success: 'success' as NsAlertSeverity,
+    error: 'error' as NsAlertSeverity,
+    warning: 'warning' as NsAlertSeverity,
 }
+

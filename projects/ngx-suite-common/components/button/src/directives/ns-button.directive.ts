@@ -1,6 +1,12 @@
 import { Directive, effect, ElementRef, inject, input, OnChanges, SimpleChanges } from '@angular/core'
 
-import { NsButton } from '../models'
+import {
+    getNsButtonSizeCssClassName,
+    getNsButtonStyleCssClassName,
+    NS_BUTTON_BASE_CLASS_NAME,
+    NsButtonSize,
+    NsButtonStyle,
+} from '../models'
 
 
 @Directive({
@@ -11,15 +17,15 @@ import { NsButton } from '../models'
 })
 export class NsButtonDirective implements OnChanges {
 
-    readonly nsButtonSize = input<NsButton.ButtonSize>()
-    readonly nsButtonStyle = input<NsButton.ButtonStyle>()
+    readonly nsButtonSize = input<NsButtonSize>()
+    readonly nsButtonStyle = input<NsButtonStyle>()
 
     // DI
     protected readonly elementRef = inject<ElementRef<HTMLElement>>(ElementRef)
 
     constructor() {
 
-        this.elementRef.nativeElement.classList.add(NsButton.BASE_CLASS_NAME)
+        this.elementRef.nativeElement.classList.add(NS_BUTTON_BASE_CLASS_NAME)
 
         effect(() => {
             this.processButtonAttributes(this.nsButtonSize(), this.nsButtonStyle())
@@ -34,10 +40,10 @@ export class NsButtonDirective implements OnChanges {
         }
     }
 
-    private processButtonAttributes(buttonSize?: NsButton.ButtonSize, buttonStyle?: NsButton.ButtonStyle): void {
+    private processButtonAttributes(buttonSize?: NsButtonSize, buttonStyle?: NsButtonStyle): void {
         if (buttonSize) {
-            for (const currentButtonSize of Object.values(NsButton.ButtonSize)) {
-                const cssClassName = NsButton.getSizeCssClassName(currentButtonSize)
+            for (const currentButtonSize of Object.values(NsButtonSize)) {
+                const cssClassName = getNsButtonSizeCssClassName(currentButtonSize)
                 if (buttonSize !== currentButtonSize) {
                     this.elementRef.nativeElement.classList.remove(cssClassName)
                 }
@@ -48,8 +54,8 @@ export class NsButtonDirective implements OnChanges {
         }
 
         if (buttonStyle) {
-            for (const currentButtonStyle of Object.values(NsButton.ButtonStyle)) {
-                const cssClassName = NsButton.getStyleCssClassName(currentButtonStyle)
+            for (const currentButtonStyle of Object.values(NsButtonStyle)) {
+                const cssClassName = getNsButtonStyleCssClassName(currentButtonStyle)
                 if (buttonStyle !== currentButtonStyle) {
                     this.elementRef.nativeElement.classList.remove(cssClassName)
                 }
