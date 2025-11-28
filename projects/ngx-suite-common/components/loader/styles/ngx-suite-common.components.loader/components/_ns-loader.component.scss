@@ -1,7 +1,6 @@
 @use 'mixins';
 
 .ns-loader {
-    --ns-loader-size: 24px;
     $self: &;
     @include mixins.ns-font-title();
 
@@ -14,20 +13,6 @@
 
     &__spinner {
         display: inline-block;
-
-        svg {
-            height: var(--ns-loader-size);
-            width: var(--ns-loader-size);
-
-            path {
-                fill: currentColor;
-                stroke: transparent;
-            }
-        }
-    }
-
-    &__spinner {
-
     }
 
     &__text {
@@ -35,7 +20,6 @@
     }
 
     &-size--small {
-        --ns-loader-size: 24px;
 
         &:not(#{$self}-placement--inline) {
             @include mixins.ns-font-overline();
@@ -43,7 +27,6 @@
     }
 
     &-size--medium {
-        --ns-loader-size: 56px;
     }
 
     &-placement--block {
@@ -83,6 +66,16 @@
         position: absolute;
         transform: translateX(-50%);
         z-index: 1000;
+
+        &#{$self}-size--medium {
+            border-radius: 64px;
+            padding: 1rem 1.5rem;
+
+            #{$self}__inner {
+                gap: 1rem;
+            }
+
+        }
     }
 
     &-placement--cover {

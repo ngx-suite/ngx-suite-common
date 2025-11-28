@@ -1,4 +1,5 @@
-import { Component, HostBinding, inject, input } from '@angular/core'
+import { Component, computed, HostBinding, inject, input } from '@angular/core'
+import { MatProgressSpinner } from '@angular/material/progress-spinner'
 
 import { NS_LOADER_DEFAULT_OPTIONS, NsLoaderDefaultOptions, NsLoaderPlacement, NsLoaderSize } from './ns-loader.models'
 
@@ -9,6 +10,9 @@ import { NS_LOADER_DEFAULT_OPTIONS, NsLoaderDefaultOptions, NsLoaderPlacement, N
     host: {
         class: 'ns-loader',
     },
+    imports: [
+        MatProgressSpinner,
+    ],
 })
 export class NsLoaderComponent {
 
@@ -18,6 +22,8 @@ export class NsLoaderComponent {
     readonly size = input<NsLoaderSize>(this.defaultOptions?.loaderSize ?? NsLoaderSize.medium)
     readonly placement = input<NsLoaderPlacement>(this.defaultOptions?.loaderPlacement ?? NsLoaderPlacement.block)
     readonly loadingText = input<string | null>(this.defaultOptions?.loadingText ?? 'Loading...')
+
+    readonly loaderSize = computed<number>(() => this.size() === NsLoaderSize.small ? 24 : 56)
 
     @HostBinding('class') get hostClasses(): string {
         return `ns-loader-size--${this.size()} ns-loader-placement--${this.placement()}`
