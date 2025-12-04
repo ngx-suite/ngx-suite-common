@@ -1,0 +1,17 @@
+<div class="ns-illustration__inner">
+
+    <img class="ns-illustration__icon" [src]="illustrationPath()"/>
+
+    @if (title()?.length) {
+        <div class="ns-illustration__title">
+            {{ title() }}
+        </div>
+    }
+
+    <div class="ns-illustration__message">
+        @if (message()?.length) {
+            {{ message()  }}
+        }
+        <ng-content></ng-content>
+    </div>
+</div>

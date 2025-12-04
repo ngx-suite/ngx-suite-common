@@ -1,4 +1,4 @@
-import { Component, computed, HostBinding, inject, input } from '@angular/core'
+import { Component, computed, HostBinding, inject, model } from '@angular/core'
 import { MatProgressSpinner } from '@angular/material/progress-spinner'
 
 import { NS_LOADER_DEFAULT_OPTIONS, NsLoaderDefaultOptions, NsLoaderPlacement, NsLoaderSize } from './ns-loader.models'
@@ -19,9 +19,9 @@ export class NsLoaderComponent {
     // DI
     readonly defaultOptions = inject<NsLoaderDefaultOptions>(NS_LOADER_DEFAULT_OPTIONS, { optional: true })
 
-    readonly size = input<NsLoaderSize>(this.defaultOptions?.loaderSize ?? NsLoaderSize.medium)
-    readonly placement = input<NsLoaderPlacement>(this.defaultOptions?.loaderPlacement ?? NsLoaderPlacement.block)
-    readonly loadingText = input<string | null>(this.defaultOptions?.loadingText ?? 'Loading...')
+    readonly size = model<NsLoaderSize>(this.defaultOptions?.loaderSize ?? NsLoaderSize.medium)
+    readonly placement = model<NsLoaderPlacement>(this.defaultOptions?.loaderPlacement ?? NsLoaderPlacement.block)
+    readonly loadingText = model<string | null>(this.defaultOptions?.loadingText ?? 'Loading...')
 
     readonly loaderSize = computed<number>(() => this.size() === NsLoaderSize.small ? 24 : 56)
 

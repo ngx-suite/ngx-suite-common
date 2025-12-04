@@ -1,0 +1,92 @@
+<div class="container py-5">
+    <h1 class="ns-font-display-lg mb-5 text-center">
+        Illustration Error
+    </h1>
+    <mat-card class="mt-5">
+        <mat-card-header>
+            <div mat-card-title>
+                Illustration Overview
+            </div>
+        </mat-card-header>
+        <mat-card-content class="pt-3 position-relative hv-50">
+            <div class="row">
+                <div class="col-xxl-6 d-flex flex-column gap-3">
+                    <div>
+                        <div class="ns-font-title mb-2 ns-color-neutral-300">Size</div>
+                        <mat-button-toggle-group [(value)]="size">
+                            <mat-button-toggle [value]="NsIllustrationSize.basic">Basic</mat-button-toggle>
+                            <mat-button-toggle [value]="NsIllustrationSize.small">Small</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div>
+                        <div class="ns-font-title mb-2 ns-color-neutral-300">Placement</div>
+                        <mat-button-toggle-group [(value)]="placement">
+                            <mat-button-toggle [value]="NsIllustrationPlacement.block">block</mat-button-toggle>
+                            <mat-button-toggle [value]="NsIllustrationPlacement.cover">cover</mat-button-toggle>
+                            <mat-button-toggle [value]="NsIllustrationPlacement.coverNoBackdrop">coverNoBackdrop</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div>
+                        <mat-form-field class="w-100">
+                            <mat-label>Title</mat-label>
+                            <input [(ngModel)]="title" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <mat-label>Message</mat-label>
+                            <input [(ngModel)]="message" matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-xxl-6 position-relative ns-bg-color-neutral-10 ns-border-radius--lg">
+                    <ns-illustration
+                            [message]="message"
+                            [placement]="placement"
+                            [size]="size"
+                            [title]="title"
+                            fileExtension="png"
+                            name="ns-error"
+                    />
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="mt-5">
+        <markdown [data]="markdownEnums"/>
+    </div>
+
+    <mat-card class="mt-5">
+        <mat-card-header class="d-flex justify-content-between align-items-center">
+            <div mat-card-title>
+                System Illustrations
+            </div>
+            <div>
+                <mat-button-toggle-group [(value)]="systemSize">
+                    <mat-button-toggle [value]="NsIllustrationSize.basic">Basic</mat-button-toggle>
+                    <mat-button-toggle [value]="NsIllustrationSize.small">Small</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </mat-card-header>
+        <mat-card-content class="pt-3 position-relative hv-50">
+            <div class="row">
+                <div class="col-xxl-6">
+                    <ns-illustration nsINoResults [size]="systemSize"/>
+
+                    <div class="mt-5">
+                        <markdown [data]="markdownNoResults"/>
+                    </div>
+                </div>
+                <div class="col-xxl-6">
+                    <ns-illustration nsIError [size]="systemSize"/>
+
+                    <div class="mt-5">
+                        <markdown [data]="markdownError"/>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+

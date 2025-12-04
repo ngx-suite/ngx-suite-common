@@ -46,6 +46,9 @@
             ],
             "@ngx-suite/common/components/loader": [
                 "projects/ngx-suite-common/components/loader/src/public-api"
+            ],
+            "@ngx-suite/common/components/illustration": [
+                "projects/ngx-suite-common/components/illustration/src/public-api"
             ]
         }
     },

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router'
 
 import { NsDemoAlertPageComponent } from './alert'
 import { NsDemoButtonPageComponent } from './button'
+import { NsDemoIllustrationPageComponent } from './illustration'
 import { NsDemoLoaderPageComponent } from './loader'
 
 
@@ -17,6 +18,10 @@ export const routes: Routes = [
     {
         path: 'loader',
         component: NsDemoLoaderPageComponent,
+    },
+    {
+        path: 'illustration',
+        component: NsDemoIllustrationPageComponent,
     },
     {
         path: '',

@@ -43,6 +43,10 @@ export class AppComponent {
             label: 'Loader',
             route: '/components/loader',
         },
+        {
+            label: 'Illustration',
+            route: '/components/illustration',
+        },
     ]
 
 }

@@ -1,4 +1,3 @@
-@use 'tailwindcss';
 @use 'vars';
 @use 'ngx-suite-common/material-design/themes/theme-ngx-suite-blue';
 @use 'ngx-suite-common/material-design/components' as materialComponents;
@@ -9,4 +8,5 @@
 @use 'ngx-suite-common.components.alert' as alert;
 @use 'ngx-suite-common.components.button' as button;
 @use 'ngx-suite-common.components.loader' as loader;
+@use 'ngx-suite-common.components.illustration' as illustration;
 @use './app';
