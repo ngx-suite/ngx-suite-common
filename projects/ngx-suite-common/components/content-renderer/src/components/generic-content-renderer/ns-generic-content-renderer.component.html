@@ -1,0 +1,6 @@
+@if (isPlainText()) {
+    <div [innerHTML]="plainText() | nsSafeHtml"></div>
+}
+@else {
+    <ng-container #componentPlaceholderViewRef></ng-container>
+}

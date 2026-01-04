@@ -2,8 +2,8 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 // Configuration
-const FOLDER_PATH = path.join(__dirname, '../', 'projects/ngx-suite-common/components/illustration/src')
-const OLD_PREFIX = 'krm-'
+const FOLDER_PATH = path.join(__dirname, '../', 'projects/ngx-suite-common/components/content-renderer/src')
+const OLD_PREFIX = 'epic-'
 const NEW_PREFIX = 'ns-'
 
 interface RenameResult {

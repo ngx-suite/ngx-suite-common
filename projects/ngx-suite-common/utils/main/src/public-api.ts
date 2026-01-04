@@ -1,2 +1,3 @@
-export * from './pipes'
+export * from './components'
 export * from './models'
+export * from './pipes'
