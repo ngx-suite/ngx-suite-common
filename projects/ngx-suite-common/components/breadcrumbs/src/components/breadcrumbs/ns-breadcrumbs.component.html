@@ -1,0 +1,34 @@
+<div class="ns-breadcrumbs"
+     [class.ns-breadcrumbs--large]="size() === 'large'"
+     [class.ns-breadcrumbs--small]="size() === 'small'">
+    @for (breadcrumbItem of breadcrumbs(); track $index; let isLast = $last) {
+        @let readonly = !breadcrumbItem.onClick && !breadcrumbItem.routerLink;
+        <a class="ns-breadcrumbs__item"
+           [class.ns-breadcrumbs__item--readonly]="readonly"
+           [class.ns-breadcrumbs__item--disabled]="breadcrumbItem.disabled"
+           [routerLink]="breadcrumbItem.routerLink || null"
+           [queryParams]="breadcrumbItem.routerLinkQueryParams || null"
+           [tabIndex]="(breadcrumbItem.disabled || readonly) ? -1 : 0"
+           (click)="onBreadcrumbClick($event, breadcrumbItem)">
+            <ng-container *ngTemplateOutlet="itemTemplate; context: { breadcrumbItem: breadcrumbItem }"/>
+        </a>
+
+        @if (!isLast) {
+            <ns-icon class="ns-breadcrumbs__separator"
+                     name="ns-arrow-chevron-right"/>
+        }
+    }
+</div>
+
+<ng-template #itemTemplate let-breadcrumbItem="breadcrumbItem">
+    @if (itemContentTemplate()) {
+        <ng-container *ngTemplateOutlet="itemContentTemplate()?.templateRef; context: { breadcrumbItem: breadcrumbItem }"/>
+    } @else {
+        {{ breadcrumbItem.label | translate }}
+    }
+
+    @if (itemSuffixTemplate()) {
+        <ng-container *ngTemplateOutlet="itemSuffixTemplate()?.templateRef; context: { breadcrumbItem: breadcrumbItem }"/>
+    }
+</ng-template>
+

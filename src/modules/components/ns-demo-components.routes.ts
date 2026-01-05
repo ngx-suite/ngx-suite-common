@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router'
 
 import { NsDemoAlertPageComponent } from './alert'
+import { NsDemoBreadcrumbsPageComponent } from './breadcrumbs'
 import { NsDemoButtonPageComponent } from './button'
 import { NsDemoIllustrationPageComponent } from './illustration'
 import { NsDemoLoaderPageComponent } from './loader'
@@ -14,6 +15,10 @@ export const routes: Routes = [
     {
         path: 'button',
         component: NsDemoButtonPageComponent,
+    },
+    {
+        path: 'breadcrumbs',
+        component: NsDemoBreadcrumbsPageComponent,
     },
     {
         path: 'loader',
