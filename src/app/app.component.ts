@@ -40,6 +40,10 @@ export class AppComponent {
             route: '/components/button',
         },
         {
+            label: 'Breadcrumbs',
+            route: '/components/breadcrumbs',
+        },
+        {
             label: 'Loader',
             route: '/components/loader',
         },

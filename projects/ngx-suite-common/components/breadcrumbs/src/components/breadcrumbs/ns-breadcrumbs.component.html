@@ -1,0 +1,46 @@
+<div class="ns-breadcrumbs"
+     [class.ns-breadcrumbs--large]="size() === 'large'"
+     [class.ns-breadcrumbs--small]="size() === 'small'">
+    @for (breadcrumbItem of breadcrumbs(); track $index; let isLast = $last) {
+        @let readonly = !breadcrumbItem.onClick && !breadcrumbItem.routerLink;
+        <a class="ns-breadcrumbs__item"
+           [class.ns-breadcrumbs__item--disabled]="breadcrumbItem.disabled"
+           [class.ns-breadcrumbs__item--readonly]="readonly"
+           [queryParams]="breadcrumbItem.routerLinkQueryParams || null"
+           [routerLink]="breadcrumbItem.routerLink || null"
+           [tabIndex]="(breadcrumbItem.disabled || readonly) ? -1 : 0"
+           (click)="onBreadcrumbClick($event, breadcrumbItem)">
+            <ng-container *ngTemplateOutlet="itemTmpl; context: { item: breadcrumbItem }"/>
+        </a>
+
+        @if (!isLast) {
+            <ns-icon class="ns-breadcrumbs__separator"
+                     name="ns-arrow-chevron-right"
+                     size="small"/>
+        }
+    }
+</div>
+
+<ng-template #itemTmpl let-item="item">
+    @if (itemTemplate()) {
+        <ng-container *ngTemplateOutlet="itemTemplate()?.templateRef; context: { item: item }"/>
+    } @else {
+        <!-- icon -->
+        @if (item.icon) {
+            <ns-icon class="ns-breadcrumbs__item-icon"
+                     [matTooltipDisabled]="!item.iconTooltip?.length"
+                     [matTooltip]="item.iconTooltip | translate"
+                     [name]="item.icon"/>
+        }
+        <!-- label -->
+        @if (item.label) {
+            {{ item.label | translate }}
+        }
+    }
+
+    <!-- suffix -->
+    @if (itemSuffixTemplate()) {
+        <ng-container *ngTemplateOutlet="itemSuffixTemplate()?.templateRef; context: { item: item }"/>
+    }
+</ng-template>
+

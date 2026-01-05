@@ -21,6 +21,14 @@
     }
 }
 
+@mixin ns-icon-self-size--small() {
+    @include ns-icon-self-size(var(--ns-font-size-icon--small));
+}
+
+@mixin ns-icon-size--small() {
+    @include ns-icon-size(var(--ns-font-size-icon--small));
+}
+
 @mixin any-icon-size($size: var(--ns-font-size-icon)) {
     @include ns-icon-size($size);
 

@@ -1,5 +1,6 @@
 import { Provider } from '@angular/core'
 import { MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS, MatButtonToggleDefaultOptions } from '@angular/material/button-toggle'
+import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card'
 import { MAT_CHECKBOX_DEFAULT_OPTIONS, MatCheckboxDefaultOptions } from '@angular/material/checkbox'
 import { MAT_CHIPS_DEFAULT_OPTIONS, MatChipsDefaultOptions } from '@angular/material/chips'
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core'
@@ -16,6 +17,12 @@ import { NsMatDateFormatProviderService } from './services'
 export function provideNsMaterialDefaults(): Provider[] {
 
     return [
+        {
+            provide: MAT_CARD_CONFIG,
+            useValue: {
+                appearance: 'outlined',
+            } as MatCardConfig,
+        },
         {
             provide: MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS,
             useValue: {

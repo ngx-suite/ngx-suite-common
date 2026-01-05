@@ -1,10 +1,10 @@
 import { provideHttpClient } from '@angular/common/http'
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core'
-import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card'
 import { BrowserModule } from '@angular/platform-browser'
 import { provideRouter } from '@angular/router'
 import { provideNsDefaultIcons } from '@ngx-suite/common/components/icon'
 import { provideNsMaterialDefaults } from '@ngx-suite/common/utils/material'
+import { provideTranslateService } from '@ngx-translate/core'
 import { provideMarkdown } from 'ngx-markdown'
 
 import { routes } from './app.routes'
@@ -16,12 +16,10 @@ export const appConfig: ApplicationConfig = {
         importProvidersFrom(BrowserModule),
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes),
-        {
-            provide: MAT_CARD_CONFIG,
-            useValue: {
-                appearance: 'outlined',
-            } as MatCardConfig,
-        },
+        provideTranslateService({
+            fallbackLang: 'en',
+            lang: 'en',
+        }),
         provideNsDefaultIcons(),
         provideMarkdown(),
         provideNsMaterialDefaults(),

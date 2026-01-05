@@ -52,6 +52,9 @@
             ],
             "@ngx-suite/common/components/content-renderer": [
                 "projects/ngx-suite-common/components/content-renderer/src/public-api"
+            ],
+            "@ngx-suite/common/components/breadcrumbs": [
+                "projects/ngx-suite-common/components/breadcrumbs/src/public-api"
             ]
         }
     },

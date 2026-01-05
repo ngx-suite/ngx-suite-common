@@ -1,0 +1,106 @@
+@use 'mixins';
+@use 'ngx-suite-common.components.icon/mixins' as iconMixins;
+
+.ns-breadcrumbs {
+    $self: &;
+    --ns-breadcrumbs-item-icon-size: var(--ns-font-size-icon--small);
+    --ns-breadcrumbs-item-color: var(--ns-color-neutral-300);
+    --ns-breadcrumbs-item-color--hover: var(--ns-color-neutral-900);
+    --ns-breadcrumbs-item-color--disabled: var(--ns-color-neutral-60);
+    --ns-breadcrumbs-item-color--readonly: var(--ns-color-neutral-900);
+
+    --ns-breadcrumbs-item-bg-color: transparent;
+    --ns-breadcrumbs-item-bg-color--hover: var(--ns-color-neutral-20);
+    --ns-breadcrumbs-item-bg-color--disabled: transparent;
+    --ns-breadcrumbs-item-bg-color--readonly: transparent;
+
+    @include mixins.ns-font-body-lg();
+    align-items: center;
+    display: flex;
+
+    &--small {
+        @include mixins.ns-font-body();
+
+        #{$self}__item {
+            border-radius: 4px;
+            max-width: 140px;
+        }
+    }
+
+    &__item {
+        align-items: center;
+        background-color: var(--ns-breadcrumbs-item-bg-color);
+        border: 0;
+        border-radius: 8px;
+        color: var(--ns-breadcrumbs-item-color);
+        cursor: default;
+        display: inline-flex;
+        font-weight: inherit;
+        gap: 8px;
+        max-width: 180px;
+        padding: 4px;
+        text-decoration: none;
+
+        // rewrite a styles
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--ns-breadcrumbs-item-color);
+            text-decoration: none;
+        }
+
+        &:focus {
+            --ns-breadcrumbs-item-bg-color: var(--ns-breadcrumbs-item-bg-color--hover);
+            outline: none;
+        }
+
+        &:hover:not(&--readonly):not(&--disabled) {
+            --ns-breadcrumbs-item-bg-color: var(--ns-breadcrumbs-item-bg-color--hover);
+            --ns-breadcrumbs-item-color: var(--ns-breadcrumbs-item-color--hover);
+            cursor: pointer;
+        }
+
+        &--disabled,
+        &--disabled:hover,
+        &--disabled:focus,
+        &--disabled:active {
+            --ns-breadcrumbs-item-color: var(--ns-breadcrumbs-item-color--disabled);
+            --ns-breadcrumbs-item-bg-color: var(--ns-breadcrumbs-item-bg-color--disabled);
+            cursor: default;
+        }
+
+        &--readonly:not(&--disabled) {
+            --ns-breadcrumbs-item-color: var(--ns-breadcrumbs-item-color--readonly);
+            --ns-breadcrumbs-item-bg-color: var(--ns-breadcrumbs-item-bg-color--readonly);
+            cursor: default;
+            text-decoration: none;
+
+        }
+
+        ns-long-text {
+            overflow: hidden;
+        }
+    }
+
+    &__item-icon {
+        @include iconMixins.ns-icon-self-size(var(--ns-breadcrumbs-item-icon-size));
+        color: var(--ns-color-neutral-300);
+    }
+
+    &__separator {
+        color: var(--ns-color-neutral-40);
+    }
+
+    &--large {
+        @include mixins.ns-font-title-lg();
+
+        #{$self}__item {
+            max-width: 240px;
+            padding: 4px 8px;
+        }
+
+        #{$self}__item-icon {
+            --ns-breadcrumbs-item-icon-size: var(--ns-font-size-icon);
+        }
+    }
+}
