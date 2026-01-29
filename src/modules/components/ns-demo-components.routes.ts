@@ -3,6 +3,7 @@ import { Routes } from '@angular/router'
 import { NsDemoAlertPageComponent } from './alert'
 import { NsDemoBreadcrumbsPageComponent } from './breadcrumbs'
 import { NsDemoButtonPageComponent } from './button'
+import { NsDemoConfirmDialogPageComponent } from './confirm-dialog'
 import { NsDemoIllustrationPageComponent } from './illustration'
 import { NsDemoLoaderPageComponent } from './loader'
 
@@ -27,6 +28,10 @@ export const routes: Routes = [
     {
         path: 'illustration',
         component: NsDemoIllustrationPageComponent,
+    },
+    {
+        path: 'confirm-dialog',
+        component: NsDemoConfirmDialogPageComponent,
     },
     {
         path: '',

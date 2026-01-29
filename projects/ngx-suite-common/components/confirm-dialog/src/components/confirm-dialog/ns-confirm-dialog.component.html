@@ -1,0 +1,43 @@
+@if(data?.headerTitle) {
+    <ns-mat-dialog-header>
+        {{ data?.headerTitle | translate }}
+    </ns-mat-dialog-header>
+}
+
+<mat-dialog-content>
+
+    @if (processingState().processingError) {
+        <ns-illustration nsIError>
+            {{ processingState().processingError | nsErrorMessage }}
+        </ns-illustration>
+    }
+
+    @if (data.messageRenderer) {
+        <ns-generic-content-renderer
+                [factory]="data.messageRenderer!.factory"
+                [params]="data.messageRenderer!.params"/>
+    }
+    @else {
+        <div [innerHTML]="(data.message) | translate: (data.messageI18nParams || {}) | nsSafeHtml"></div>
+    }
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    @if(!data.hideCancelButton) {
+        <button
+                [disabled]="processingState().processing"
+                mat-stroked-button
+                (click)="onCancelButtonClicked()">
+            {{ data.cancelButtonText | translate }}
+        </button>
+    }
+
+    <button [color]="data.confirmButtonColor"
+            [disabled]="processingState().processing"
+            mat-flat-button
+            (click)="onConfirmButtonClicked()">
+        {{ (processingState().processing ? data.processingText : (data.confirmButtonText)) | translate }}
+    </button>
+</mat-dialog-actions>
+

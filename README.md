@@ -22,12 +22,19 @@ To **run the Demo App**, run: `npm run start`
 ## Components
 
 - Alert
+- Breadcrumbs
 - Button
+- Confirm Dialog
 - Icon
 - Loader
+- Illustration
+
+## CDK
+
+- Content Renderer
+- Mat Dialog Layout
 
 ---
-
 ## Utils
 
 - Common

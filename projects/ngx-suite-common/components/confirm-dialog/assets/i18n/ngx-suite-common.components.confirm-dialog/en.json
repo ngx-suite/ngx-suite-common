@@ -1,0 +1,10 @@
+{
+    "COMMON" : {
+        "CONFIRM_DIALOG": {
+            "DEFAULT_TITLE": "Confirm",
+            "DEFAULT_MESSAGE": "Do you really want to do this?",
+            "DELETE__TITLE": "Delete",
+            "DELETE__MESSAGE": "Do you really want to delete this?"
+        }
+    }
+}

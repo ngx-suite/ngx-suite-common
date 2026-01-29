@@ -7,7 +7,7 @@
     @include mat.dialog-overrides((
         content-padding: 1rem,
         with-actions-content-padding: 1rem 1rem 0,
-        container-shape: 8px,
+        container-shape: 16px,
         container-elevation-shadow: var(--ns-shadow-hover)
     ));
 }

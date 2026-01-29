@@ -15,10 +15,10 @@ import { NsBreadcrumbsItemModel, NsBreadcrumbsSize } from '../../models'
     templateUrl: './ns-breadcrumbs.component.html',
     imports: [
         RouterLink,
-        TranslatePipe,
         NsIconComponent,
         NgTemplateOutlet,
         MatTooltip,
+        TranslatePipe,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

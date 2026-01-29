@@ -55,6 +55,15 @@
             ],
             "@ngx-suite/common/components/breadcrumbs": [
                 "projects/ngx-suite-common/components/breadcrumbs/src/public-api"
+            ],
+            "@ngx-suite/common/components/confirm-dialog": [
+                "projects/ngx-suite-common/components/confirm-dialog/src/public-api"
+            ],
+            "@ngx-suite/common/components/mat-dialog": [
+                "projects/ngx-suite-common/components/mat-dialog/src/public-api"
+            ],
+            "@ngx-suite/common/utils/translate": [
+                "projects/ngx-suite-common/utils/translate/src/public-api"
             ]
         }
     },

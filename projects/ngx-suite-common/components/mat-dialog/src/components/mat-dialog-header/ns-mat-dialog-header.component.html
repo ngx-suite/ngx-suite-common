@@ -1,0 +1,27 @@
+<div class="ns-mat-dialog-header">
+
+    <div class="ns-mat-dialog-header__content">
+        <div class="ns-mat-dialog-header__title">
+            <ng-content></ng-content>
+        </div>
+
+        <div>
+            <ng-content select="[nsMatDialogHeaderActions]"></ng-content>
+        </div>
+
+        @if (showCloseButton()) {
+            <div class="ns-mat-dialog-header__close-btn">
+                <button [matTooltip]="'COMMON.CLOSE' | translate"
+                        mat-dialog-close
+                        mat-icon-button>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        }
+    </div>
+
+    <div class="ns-mat-dialog-header__bottom">
+        <ng-content select="[nsMatDialogHeaderBottom]"></ng-content>
+    </div>
+
+</div>

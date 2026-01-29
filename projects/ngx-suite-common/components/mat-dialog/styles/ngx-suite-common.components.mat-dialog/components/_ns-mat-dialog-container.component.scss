@@ -1,0 +1,15 @@
+.ns-mat-dialog-container {
+    background: var(--ns-color-neutral-0);
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &--full-screen {
+        position: fixed;
+    }
+}

@@ -80,6 +80,21 @@
                                 "glob": "**/*",
                                 "input": "projects/ngx-suite-common/components/breadcrumbs/assets",
                                 "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/components/confirm-dialog/assets",
+                                "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/components/mat-dialog/assets",
+                                "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/utils/translate/assets",
+                                "output": "/assets"
                             }
                         ],
                         "styles": [
@@ -111,7 +126,10 @@
                                 "projects/ngx-suite-common/components/loader/styles",
                                 "projects/ngx-suite-common/components/illustration/styles",
                                 "projects/ngx-suite-common/components/content-renderer/styles",
-                                "projects/ngx-suite-common/components/breadcrumbs/styles"
+                                "projects/ngx-suite-common/components/breadcrumbs/styles",
+                                "projects/ngx-suite-common/components/confirm-dialog/styles",
+                                "projects/ngx-suite-common/components/mat-dialog/styles",
+                                "projects/ngx-suite-common/utils/translate/styles"
                             ]
                         },
                         "externalDependencies": [

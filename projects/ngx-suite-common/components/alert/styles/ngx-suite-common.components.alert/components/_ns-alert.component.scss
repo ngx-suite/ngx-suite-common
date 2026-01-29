@@ -2,7 +2,7 @@
 @use 'ngx-suite-common.components.icon/mixins' as iconMixins;
 
 :root {
-    --ns-alert-shape: var(--ns-border-radius--surface);
+    --ns-alert-shape: 1rem;
     --ns-alert-color: var(--ns-color-neutral-900);
     // error
     --ns-alert-icon-color--error: var(--ns-color-error-300);
@@ -68,7 +68,7 @@
     }
 }
 
-@include mixins.media-breakpoint-down(sm) {
+@include mixins.media-breakpoint-down(lg) {
     .ns-alert {
         flex-direction: column;
     }

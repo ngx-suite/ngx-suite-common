@@ -36,6 +36,10 @@ export class AppComponent {
             route: '/components/alert',
         },
         {
+            label: 'Confirm Dialog',
+            route: '/components/confirm-dialog',
+        },
+        {
             label: 'Button',
             route: '/components/button',
         },

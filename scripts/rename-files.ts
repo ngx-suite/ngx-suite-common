@@ -20,7 +20,7 @@ function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): string[] {
 
     files.forEach((file) => {
         const filePath = path.join(dirPath, file)
-    
+
         if (fs.statSync(filePath).isDirectory()) {
             arrayOfFiles = getAllFiles(filePath, arrayOfFiles)
         }
@@ -41,7 +41,7 @@ function renameFiles(): RenameResult[] {
     console.log(`Replacing: ${OLD_PREFIX} -> ${NEW_PREFIX}\n`)
 
     const allFiles = getAllFiles(FOLDER_PATH)
-    const filesToRename = allFiles.filter(file => 
+    const filesToRename = allFiles.filter(file =>
         path.basename(file).includes(OLD_PREFIX),
     )
 

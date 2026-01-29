@@ -1,0 +1,35 @@
+@use 'sass:math';
+@use 'mixins';
+
+
+.ns-mat-dialog-header {
+    $self: &;
+    @include mixins.ns-border-style(bottom);
+    padding: calc(var(--ns-mat-dialog-side-padding) / 2) var(--ns-mat-dialog-side-padding);
+    position: relative;
+
+    &__content {
+        align-items: center;
+        display: flex;
+        min-height: 48px;
+    }
+
+    &__bottom:not(:empty) {
+        padding: 8px 0;
+    }
+
+    &__title {
+        @include mixins.ns-font-title-lg();
+        flex: 1;
+    }
+
+    &__close-btn {
+        align-items: center;
+        display: flex;
+        height: 100%;
+
+        .mat-mdc-icon-button {
+            margin-left: 8px;
+        }
+    }
+}

@@ -1,13 +1,15 @@
-@use 'vars';
-@use 'ngx-suite-common/material-design/themes/theme-ngx-suite-blue';
-@use 'ngx-suite-common/material-design/components' as materialComponents;
-@use 'ngx-suite-common/bootstrap' as bootstrap;
-@use 'ngx-suite-common/common' as common;
-@use 'ngx-suite-common.components' as components;
-@use 'ngx-suite-common.components.icon' as icon;
-@use 'ngx-suite-common.components.alert' as alert;
-@use 'ngx-suite-common.components.button' as button;
-@use 'ngx-suite-common.components.loader' as loader;
-@use 'ngx-suite-common.components.illustration' as illustration;
-@use 'ngx-suite-common.components.breadcrumbs' as breadcrumbs;
+@use 'vars' as *;
+@use 'ngx-suite-common/material-design/themes/theme-ngx-suite-blue' as *;
+@use 'ngx-suite-common/material-design/components' as *;
+@use 'ngx-suite-common/bootstrap' as *;
+@use 'ngx-suite-common/common' as *;
+@use 'ngx-suite-common.components' as *;
+@use 'ngx-suite-common.components.icon' as *;
+@use 'ngx-suite-common.components.alert' as *;
+@use 'ngx-suite-common.components.button' as *;
+@use 'ngx-suite-common.components.loader' as *;
+@use 'ngx-suite-common.components.illustration' as *;
+@use 'ngx-suite-common.components.breadcrumbs' as *;
+@use 'ngx-suite-common.components.mat-dialog' as *;
+
 @use './app';
