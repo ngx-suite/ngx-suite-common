@@ -1,0 +1,49 @@
+<div class="container py-5">
+    <h1 class="ns-font-display-lg mb-5 text-center">
+        Skeleton Loader
+    </h1>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Skeleton Loader Overview</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="pt-3">
+            <div class="row">
+                <div class="col-xl-6 d-flex gap-2 flex-column">
+                    <ns-skeleton-loader [nsSize]="size"/>
+                    <ns-skeleton-loader [nsSize]="size"/>
+                    <ns-skeleton-loader [nsSize]="size"/>
+                    <ns-skeleton-loader [nsSize]="size"/>
+                </div>
+                <div class="col-xl-6">
+                    <div class="ns-font-title-sm mb-2">Size</div>
+                    <mat-radio-group [(ngModel)]="size">
+                        @for (currentSize of sizesList; track currentSize) {
+                            <mat-radio-button [value]="currentSize">{{ currentSize }}</mat-radio-button>
+                        }
+                    </mat-radio-group>
+                    <div class="mt-3">
+                        <markdown [data]="markdownData"></markdown>
+                        <markdown [data]="markdownDataTs"></markdown>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+
+    <div class="py-5">
+
+        <h2 class="mb-4">Custom Size / Layout</h2>
+
+        <div class="d-flex gap-2 flex-column">
+            <ns-skeleton-loader width="500px" height="300px" />
+            <ns-skeleton-loader width="300px" height="32px" />
+            <ns-skeleton-loader width="300px" height="32px" />
+            <ns-skeleton-loader width="300px" height="32px" />
+        </div>
+    </div>
+
+</div>
+
+
+

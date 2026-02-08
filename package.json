@@ -26,7 +26,7 @@
     "-------------------------NGX-SUITE--DEVKIT-COMMANDS--------------------------": "",
     "ns::sync-angular-env": "ng g @ngx-suite/devkit:sync-ang-env --source-dir-path=projects/ngx-suite-common --parent-lib-alias=@ngx-suite/common",
     "ns::clean-up-ang-env": "ng g @ngx-suite/devkit:clean-up-ang-env --project-name=ngx-suite-common-demo",
-    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/utils/translate --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
+    "ns::new-entry-point": "ng g @ngx-suite/devkit:new-entry-point --base-path=ngx-suite-common/components/skeleton-loader --ts-path-fragment-aliases=ngx-suite-,@ngx-suite/"
   },
   "private": true,
   "dependencies": {

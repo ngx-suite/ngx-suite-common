@@ -6,6 +6,7 @@ import { NsDemoButtonPageComponent } from './button'
 import { NsDemoConfirmDialogPageComponent } from './confirm-dialog'
 import { NsDemoIllustrationPageComponent } from './illustration'
 import { NsDemoLoaderPageComponent } from './loader'
+import { NsDemoSkeletonLoaderPageComponent } from './skeleton-loader'
 
 
 export const routes: Routes = [
@@ -32,6 +33,10 @@ export const routes: Routes = [
     {
         path: 'confirm-dialog',
         component: NsDemoConfirmDialogPageComponent,
+    },
+    {
+        path: 'skeleton-loader',
+        component: NsDemoSkeletonLoaderPageComponent,
     },
     {
         path: '',

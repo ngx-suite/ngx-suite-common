@@ -28,6 +28,7 @@ To **run the Demo App**, run: `npm run start`
 - Icon
 - Loader
 - Illustration
+- Skeleton Loader
 
 ## CDK
 

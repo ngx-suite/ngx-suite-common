@@ -64,6 +64,9 @@
             ],
             "@ngx-suite/common/utils/translate": [
                 "projects/ngx-suite-common/utils/translate/src/public-api"
+            ],
+            "@ngx-suite/common/components/skeleton-loader": [
+                "projects/ngx-suite-common/components/skeleton-loader/src/public-api"
             ]
         }
     },

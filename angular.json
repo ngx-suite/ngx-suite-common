@@ -95,6 +95,11 @@
                                 "glob": "**/*",
                                 "input": "projects/ngx-suite-common/utils/translate/assets",
                                 "output": "/assets"
+                            },
+                            {
+                                "glob": "**/*",
+                                "input": "projects/ngx-suite-common/components/skeleton-loader/assets",
+                                "output": "/assets"
                             }
                         ],
                         "styles": [
@@ -129,7 +134,8 @@
                                 "projects/ngx-suite-common/components/breadcrumbs/styles",
                                 "projects/ngx-suite-common/components/confirm-dialog/styles",
                                 "projects/ngx-suite-common/components/mat-dialog/styles",
-                                "projects/ngx-suite-common/utils/translate/styles"
+                                "projects/ngx-suite-common/utils/translate/styles",
+                                "projects/ngx-suite-common/components/skeleton-loader/styles"
                             ]
                         },
                         "externalDependencies": [

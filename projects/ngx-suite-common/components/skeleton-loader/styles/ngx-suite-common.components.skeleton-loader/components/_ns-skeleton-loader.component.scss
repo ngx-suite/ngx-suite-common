@@ -1,0 +1,36 @@
+.ns-skeleton-loader {
+    --ns-skeleton-loader--height: 32px;
+    animation: skeleton-loading 1.5s infinite linear;
+    background: linear-gradient(90deg, var(--ns-color-neutral-20) 25%, var(--ns-color-neutral-30) 50%, var(--ns-color-neutral-20) 75%);
+    background-size: 200% 100%;
+    border-radius: .5rem;
+    display: block;
+    height: var(--ns-skeleton-loader--height);
+    width: 100%;
+
+    &--size-sm {
+        --ns-skeleton-loader--height: 24px;
+    }
+
+    &--size-md {
+        --ns-skeleton-loader--height: 32px;
+    }
+
+    &--size-lg {
+        --ns-skeleton-loader--height: 40px;
+    }
+
+    &--size-xl {
+        --ns-skeleton-loader--height: 56px;
+    }
+
+    @keyframes skeleton-loading {
+        0% {
+            background-position: 100% 0;
+        }
+
+        100% {
+            background-position: -100% 0;
+        }
+    }
+}

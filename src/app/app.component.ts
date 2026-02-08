@@ -55,6 +55,10 @@ export class AppComponent {
             label: 'Illustration',
             route: '/components/illustration',
         },
+        {
+            label: 'Skeleton Loader',
+            route: '/components/skeleton-loader',
+        },
     ]
 
 }
