@@ -24,16 +24,16 @@ jobs:
     name: Install dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Cache node_modules
         id: node-modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: node_modules
           key: node-modules-${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}
@@ -48,16 +48,16 @@ jobs:
     needs: install
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Restore node_modules
         id: node-modules
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: node_modules
           key: node-modules-${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}
@@ -74,16 +74,16 @@ jobs:
     needs: install
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Restore node_modules
         id: node-modules
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: node_modules
           key: node-modules-${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}
@@ -100,16 +100,16 @@ jobs:
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Restore node_modules
         id: node-modules
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: node_modules
           key: node-modules-${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}
@@ -121,29 +121,29 @@ jobs:
       - run: npm run build-lib
 
       - name: Upload build output
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: dist
+          name: dist-lib
           path: dist/
           if-no-files-found: error
           retention-days: 7
 
   # 3. Build — only after both lint and test pass.
   build:
-    name: Build
+    name: Build Demo App
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Restore node_modules
         id: node-modules
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: node_modules
           key: node-modules-${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}
@@ -155,9 +155,9 @@ jobs:
       - run: npm run build
 
       - name: Upload build output
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: dist
+          name: dist-demo
           path: dist/
           if-no-files-found: error
           retention-days: 7

@@ -4,13 +4,18 @@ name: 'Release'
 # script from the dropdown. The job:
 #   1. bumps projects/ngx-suite-common/package.json (the library, not the demo)
 #   2. lint + test + builds the library  -> dist/ngx-suite-common
-#   3. publishes @ngx-suite/common to npmjs.org
+#   3. publishes @ngx-suite/common to npmjs.org via OIDC Trusted Publishing
 #   4. commits "v<version>", tags "v<version>", and pushes them
 #   5. for major/minor, opens the next SNAPSHOT dev cycle on the branch
 #
 # Pushing uses the default GITHUB_TOKEN ON PURPOSE: pushes made with
 # GITHUB_TOKEN do NOT start new workflow runs, so this release never triggers
 # ci.yml (or itself). No PAT is used.
+#
+# Publishing uses npm Trusted Publishing (OIDC) — no NPM_TOKEN secret. It needs
+# a trusted publisher configured on npmjs.com for this repo + this workflow
+# filename, plus the `id-token: write` permission below. Provenance is attached
+# automatically (the repo is public).
 on:
   workflow_dispatch:
     inputs:
@@ -42,15 +47,16 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write   # push the bump commit(s) and the release tag
+      id-token: write   # OIDC token for npm Trusted Publishing
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         # default GITHUB_TOKEN — the push below won't trigger ci.yml
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
-          registry-url: 'https://registry.npmjs.org'   # writes .npmrc using NODE_AUTH_TOKEN
+          registry-url: 'https://registry.npmjs.org'   # registry for OIDC Trusted Publishing
 
       - name: Install dependencies
         run: npm ci
@@ -80,10 +86,14 @@ jobs:
       - name: Lint, test, build library
         run: npm run build-lib-for-publish   # lint + test + build-lib -> dist/ngx-suite-common
 
+      # Trusted Publishing needs npm >= 11.5.1; the Node 22 runner ships an older
+      # npm, so upgrade it. No NPM_TOKEN — npm exchanges the GitHub OIDC token for
+      # a short-lived registry token and attaches provenance automatically.
+      - name: Upgrade npm for Trusted Publishing
+        run: npm install -g npm@latest
+
       - name: Publish to npm
         working-directory: dist/ngx-suite-common
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
 
       - name: Commit and tag release
