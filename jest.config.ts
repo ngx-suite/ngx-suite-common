@@ -1,3 +1,10 @@
+/**
+ * Force Jest to load this config through ts-node (CommonJS) instead of Node's
+ * native TypeScript loader. Node 22+ treats this .ts file as ESM (tsconfig sets
+ * `module: ES2022`), and ESM can't resolve directory imports like
+ * `jest-preset-angular/presets`. ts-node compiles it as CommonJS, which can.
+ * @jest-config-loader ts-node
+ */
 import presets from 'jest-preset-angular/presets'
 import { JestConfigWithTsJest, pathsToModuleNameMapper } from 'ts-jest'
 
