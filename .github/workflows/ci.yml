@@ -95,6 +95,40 @@ jobs:
       - run: npm run test
 
   # 3. Build — only after both lint and test pass.
+  build-lib:
+    name: Build Library
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache/restore@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-node${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}
+
+      - name: npm ci (cache miss fallback)
+        if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - run: npm run build-lib
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
+
+  # 3. Build — only after both lint and test pass.
   build:
     name: Build
     needs: [lint, test]

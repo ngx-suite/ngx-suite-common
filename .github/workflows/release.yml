@@ -1,0 +1,118 @@
+name: 'Release'
+
+# Manual-only release for the @ngx-suite/common library. Pick a version-bump
+# script from the dropdown. The job:
+#   1. bumps projects/ngx-suite-common/package.json (the library, not the demo)
+#   2. lint + test + builds the library  -> dist/ngx-suite-common
+#   3. publishes @ngx-suite/common to npmjs.org
+#   4. commits "v<version>", tags "v<version>", and pushes them
+#   5. for major/minor, opens the next SNAPSHOT dev cycle on the branch
+#
+# Pushing uses the default GITHUB_TOKEN ON PURPOSE: pushes made with
+# GITHUB_TOKEN do NOT start new workflow runs, so this release never triggers
+# ci.yml (or itself). No PAT is used.
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: 'Version bump (npm script from projects/ngx-suite-common/package.json)'
+        required: true
+        default: next-minor-version
+        type: choice
+        options:
+          - next-major-version
+          - next-minor-version
+          - next-patch-version
+          - next-preminor-version
+          - next-snapshot-version
+
+concurrency:
+  # One release at a time so concurrent runs can't race on bump/commit/tag/push.
+  group: ngx-release
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '22.22.3'
+  HUSKY: '0'            # don't install git hooks during npm ci
+  TAG_PREFIX: 'v'
+  COMMIT_PREFIX: 'v'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # push the bump commit(s) and the release tag
+    steps:
+      - uses: actions/checkout@v4
+        # default GITHUB_TOKEN — the push below won't trigger ci.yml
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          registry-url: 'https://registry.npmjs.org'   # writes .npmrc using NODE_AUTH_TOKEN
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump library version
+        id: bump
+        working-directory: projects/ngx-suite-common
+        env:
+          NPM_SCRIPT: ${{ inputs.script }}
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_REF_TYPE}" != "branch" ]; then
+            echo "ERROR: run this from a branch, not a ${GITHUB_REF_TYPE} (${GITHUB_REF_NAME})." >&2
+            exit 1
+          fi
+          # --no-git-tag-version: suppress npm's own commit/tag (we create
+          # v<version> ourselves) and skip npm's clean-tree precondition.
+          npm run "$NPM_SCRIPT" -- --no-git-tag-version
+          VERSION="$(node -p "require('./package.json').version")"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Lint, test, build library
+        run: npm run build-lib-for-publish   # lint + test + build-lib -> dist/ngx-suite-common
+
+      - name: Publish to npm
+        working-directory: dist/ngx-suite-common
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
+
+      - name: Commit and tag release
+        env:
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          set -euo pipefail
+          git add projects/ngx-suite-common/package.json
+          git commit -m "${COMMIT_PREFIX}${VERSION}"
+          git tag "${TAG_PREFIX}${VERSION}"
+
+      - name: Push release commit and tag
+        env:
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          set -euo pipefail
+          TAG="${TAG_PREFIX}${VERSION}"
+          # --atomic: commit + tag land together or not at all.
+          git push --atomic origin "HEAD:refs/heads/${GITHUB_REF_NAME}" "refs/tags/${TAG}"
+
+      - name: Open next development cycle
+        # Major/minor only: bump to the next SNAPSHOT as a SECOND, separate,
+        # untagged, UNPUBLISHED commit. [skip ci] is belt-and-suspenders — the
+        # GITHUB_TOKEN push already triggers nothing.
+        if: ${{ inputs.script == 'next-major-version' || inputs.script == 'next-minor-version' }}
+        run: |
+          set -euo pipefail
+          ( cd projects/ngx-suite-common && npm run next-preminor-version -- --no-git-tag-version )
+          DEV_VERSION="$(node -p "require('./projects/ngx-suite-common/package.json').version")"
+          git add projects/ngx-suite-common/package.json
+          git commit -m "${COMMIT_PREFIX}${DEV_VERSION}" -m "[skip ci]"
+          git push origin "HEAD:refs/heads/${GITHUB_REF_NAME}"
