@@ -1,6 +1,6 @@
 {
   "name": "@ngx-suite/common",
-  "version": "21.0.0-SNAPSHOT.0",
+  "version": "21.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ngx-suite/ngx-suite-common.git",
